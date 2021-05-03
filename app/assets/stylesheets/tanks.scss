@@ -1,0 +1,196 @@
+// Place all the styles related to the tanks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.tank_container{
+  background-image:url("/images/bk_img_2.jpg");
+  text-align: center;
+  padding-top:120px;
+  background-size: contain;
+  min-height:92vh;
+  height:auto;
+  width:100%;
+  background-size:100vw;
+}
+
+.tank{
+  margin-top:5vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tank_title{
+  margin-top:3vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.memory_tank_title{
+  margin-left:29vw;
+  border-bottom: solid 5px red;
+  
+}
+
+.question_tank_title{
+  margin-right:29vw;
+  border-bottom: solid 5px red;
+
+}
+
+.tank_comment{
+  margin-top:3vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.memory_tank_comment{
+  margin-left:15vw;
+  
+  
+}
+
+.question_tank_comment{
+  margin-right:15vw;
+ 
+
+}
+
+
+.memory_tank{
+  background-image:url("/images/tank_img.jpg");
+  border: 2px solid orangered;
+  width:  300px;
+  height: 300px;
+  border-radius: 90%;
+  background-position: center center;
+  background-size: contain;
+  background-color:white;
+  margin-left:25vw;
+}
+
+.question_tank{
+  background-image:url("/images/tank_img_2.jpg");
+  border: 2px solid orangered;
+  width:  300px;
+  height: 300px;
+  border-radius: 90%;
+  background-position: center center;
+  background-size: contain;
+  background-color:white;
+  margin-right:25vw;
+
+}
+
+.tank_enter{
+  margin-top:5vh;
+  display: flex;
+  justify-content: space-between; 
+}
+
+.word_tank_enter{
+  margin-left:28vw;
+}
+
+.question_tank_enter{
+  margin-right:28vw;
+}
+
+
+
+
+
+footer{
+  background-color: #FCF1DC;
+  width:100vw;
+  display: flex;
+  justify-content: space-between;
+  height:8vh;
+}
+
+.footer_left{
+  display: flex;
+  margin:30px 150px;
+}
+
+.footer_left_main{
+  margin-right:30px;
+}
+
+
+
+.footer_right{
+  display: flex;
+  margin:20px;
+}
+
+Result Skip Results Iframe
+EDIT ON
+#page_top{
+  width: 100px;
+  height: 60px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  opacity: 0.6;
+}
+
+#page_top a{
+  position: relative;
+  display: block;
+  width: 100px;
+  height: 60px;
+  text-decoration: none;
+}
+
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f102';
+  font-size: 25px;
+  color: orangered;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: -25px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+
+#page_top a::after{
+  content: 'PAGE TOP';
+  font-size: 13px;
+  color: orangered;
+  position: absolute;
+  top: 30px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+
+
+.p3{
+  color:orange;
+  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  font-size:30px;
+  font-weight:900;
+}
+
+
+.p4{
+  color:	#333333;
+  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  font-size:30px;
+  font-weight:900;
+}
+
+.p5{
+  color:	#333333;
+  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  font-size:18px;
+  font-weight:900;
+}

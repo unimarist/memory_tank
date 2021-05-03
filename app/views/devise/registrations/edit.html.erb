@@ -1,0 +1,68 @@
+<div class="contents row">
+  <div class="container">
+    <p class="p1">アカウント設定</p>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+<div class="field">
+        <%= f.label :username %> (最大6文字まで)<br />
+        <%= f.text_field :username, autofocus: true, maxlength: "6" %>
+</div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_icon %><br />
+    <%= f.file_field :user_icon %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password %> (変更しない場合は空白可/最低6文字以上)<br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %> (変更を確認する場合は現在のパスワードが必要です)<br />
+    <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "更新する",class: "sub" %>
+    <%= link_to "戻る", :back, class: "sub" %>
+  </div>
+<% end %>
+
+<p >※ 以下のボタンからアカウントの削除ができます</p>
+
+<%= button_to "削除する", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+
+
+
+</div>
+<footer>
+     <div class="footer_left">
+        <div class="footer_left_main">
+           <a href="/"><p class="p2">MemoryTank</p></a>
+        </div>
+        <div class="fotter_left_sub">
+           <p class="p2">〜効率的なナレッジ蓄積と知識定着を支援〜</p>
+        </div>
+     </div>
+     <div class="footer_right">
+        <div id="page_top"><a href="#"></a></div>
+     </div>
+    </footer>
+</div>
