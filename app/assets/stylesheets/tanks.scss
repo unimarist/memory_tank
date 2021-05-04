@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+//LP
 .tank_container{
   background-image:url("/images/bk_img_2.jpg");
   text-align: center;
@@ -12,6 +13,7 @@
   width:100%;
   background-size:100vw;
 }
+
 
 .tank{
   margin-top:5vh;
@@ -178,6 +180,7 @@ EDIT ON
   font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
   font-size:30px;
   font-weight:900;
+  text-align: center;
 }
 
 
@@ -194,3 +197,76 @@ EDIT ON
   font-size:18px;
   font-weight:900;
 }
+
+.p6{
+  color:orange;
+  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  font-size:30px;
+  font-weight:900;
+  text-align: center;
+}
+
+//WordTank一覧
+
+.tank_container2{
+  background-image:url("/images/bk_img_2.jpg");
+  padding-top:120px;
+  background-size: contain;
+  min-height:92vh;
+  height:auto;
+  width:100%;
+  background-size:100vw;
+}
+
+.tank_top{
+  margin-right:43vw;
+  margin-left:43vw;
+  display: flex;
+}
+
+.list{
+  display:inline-block;
+  margin-left:13vw;
+}
+.tank_button{
+  display: inline-flex;
+  margin-bottom:50px;
+  margin-left:50px;
+}
+
+.tank_name{
+  width:250px;
+}
+
+.tank_icon{
+  border: 2px solid orangered;
+  width:  250px;
+  height: 250px;
+  border-radius: 90%;
+  background-position: center center;
+  background-size: contain;
+  background-color:white;
+}
+
+.word_tank_icon_default{
+  background-image:url("/images/tank_img.jpg");
+  border: 2px solid orangered;
+  width:  250px;
+  height: 250px;
+  border-radius: 90%;
+  background-position: center center;
+  background-size: contain;
+  background-color:white;
+}
+
+.question_tank_icon_default{
+  background-image:url("/images/tank_img_2.jpg");
+  border: 2px solid orangered;
+  width:  250px;
+  height: 250px;
+  border-radius: 90%;
+  background-position: center center;
+  background-size: contain;
+  background-color:white;
+}
+

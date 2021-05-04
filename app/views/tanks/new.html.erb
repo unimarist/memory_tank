@@ -1,0 +1,52 @@
+<div class="contents row">
+  <div class="container">
+
+   <% if @id == "1" %>
+    <p class="p1">WordTankの作成</p>
+   <% elsif @id =="2" %>
+   <p class="p1">QuestionTankの作成</p>
+   <% end %>
+
+     <%=form_with model: @tank, local: true do |form| %>
+      <div class="field">
+        <%= form.label :tank_name ,"Tank名" %><br />
+        <%= form.text_field :tank_name %>
+      </div>
+       
+      <% if @id == "1" %>
+       <div class="field">
+        <%= form.hidden_field :tank_type, value: "単語" %>
+      </div>
+       <% elsif @id == "2" %>
+       <div class="field">
+        <%= form.hidden_field :tank_type, value: "問題" %>
+      </div>
+       <% end %>
+
+        <div class="field">
+        <%= form.label :tank_icon ,"Tankアイコン" %><br />
+        <%= form.file_field :tank_icon %>
+        </div>
+
+        <div class="field">
+         <%= form.submit "作成する" ,class: "sub" %>
+         <%= link_to "戻る", :back, class: "sub" %>
+        </div>
+     <% end %>
+  </div>
+
+
+  <footer>
+     <div class="footer_left">
+        <div class="footer_left_main">
+           <a href="/"><p class="p2">MemoryTank</p></a>
+        </div>
+        <div class="fotter_left_sub">
+           <p class="p2">〜効率的なナレッジ蓄積と知識定着を支援〜</p>
+        </div>
+     </div>
+     <div class="footer_right">
+        <div id="page_top"><a href="#"></a></div>
+     </div>
+    </footer>
+</div>
