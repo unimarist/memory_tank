@@ -10,10 +10,18 @@ Rails.application.routes.draw do
         get 'word_search'
         get 'question_search'
       end
+      resources :words do
+        collection do
+          get 'learned'
+          get 'unlearned'
+        end
+        member do
+          get 'correct_count'
+          get 'uncorrect_count'
+        end
+      end
     end
 
-
-
-
+   
 
 end

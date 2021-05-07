@@ -3,21 +3,33 @@
 <p class="p3">2種類のTankで効率的にナレッジ蓄積/知識定着をしよう！</p>
 
 <div class="tank_title">
-    <div class="memory_tank_title">
+    <div class="left_tank_title">
     <p class="p3">Word Tank</p> 
     </div>
-    <div class="question_tank_title">
+    <div class="right_tank_title">
      <p class="p3">Question Tank</p> 
     </div>
 </div>
 
-
+<% if user_signed_in? %>
 <div class="tank">
-    <div class="memory_tank">
+     <div >
+     <%= link_to image_tag("/images/tank_img.jpg", class: 'left_tank' )  , word_search_tank_path(current_user.id)  %>
     </div>
-    <div class="question_tank">
+    <div>
+     <%= link_to image_tag("/images/tank_img_2.jpg", class: 'right_tank' )  , question_search_tank_path(current_user.id)   %>
     </div>
 </div>
+<% else %>
+<div class="tank">
+     <div >
+     <%= link_to image_tag("/images/tank_img.jpg", class: 'left_tank' )  , '/'%>
+    </div>
+    <div>
+     <%= link_to image_tag("/images/tank_img_2.jpg", class: 'right_tank' )  , '/'  %>
+    </div>
+</div>
+<% end %>
 
 <div class="tank_comment">
     <div class="memory_tank_comment">

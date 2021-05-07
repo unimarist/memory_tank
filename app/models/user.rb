@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   mount_uploader :user_icon, ImageUploader
   has_many :tanks 
+  has_many :words
 end
