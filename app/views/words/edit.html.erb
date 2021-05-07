@@ -1,0 +1,41 @@
+<div class="contents row">
+  <div class="container">
+
+    <p class="p1">Wordの編集 : <%= @tank.tank_name %></p>
+
+     <%=form_with(model: [@tank,@word]) do |form| %>
+
+      <div class="field">
+        <%= form.label :word ,"Word" %><br />
+        <%= form.text_field :word %>
+      </div>
+      <div class="field">
+        <%= form.label :meaning ,"意味" %><br />
+        <%= form.text_field :meaning %>
+      </div>
+
+    
+      <div class="field">
+         <%= form.submit "編集する" ,class: "sub" %>
+         <%= link_to "戻る", :back, class: "sub" %>
+      </div>
+    <% end %>
+
+
+  </div>
+
+
+  <footer>
+     <div class="footer_left">
+        <div class="footer_left_main">
+           <a href="/"><p class="p2">MemoryTank</p></a>
+        </div>
+        <div class="fotter_left_sub">
+           <p class="p2">〜効率的なナレッジ蓄積と知識定着を支援〜</p>
+        </div>
+     </div>
+     <div class="footer_right">
+        <div id="page_top"><a href="#"></a></div>
+     </div>
+    </footer>
+</div>

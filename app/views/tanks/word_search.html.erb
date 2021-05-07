@@ -16,10 +16,11 @@
       
      <% if word_tank.tank_icon.attached?  %>
         <div>
-           <%= image_tag word_tank.tank_icon(), class: 'tank_icon' %>
+            <%= link_to image_tag(word_tank.tank_icon, class: 'tank_icon') ,tank_words_path(word_tank.id)  %>
         </div>
       <% else %>
-      <div class="word_tank_icon_default" >    
+      <div>    
+            <%= link_to image_tag("/images/tank_img.jpg", class: 'tank_icon' )  , tank_words_path(word_tank.id)   %>
       </div>
       <% end %>  
 

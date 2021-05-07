@@ -27,13 +27,13 @@
   justify-content: space-between;
 }
 
-.memory_tank_title{
+.left_tank_title{
   margin-left:29vw;
   border-bottom: solid 5px red;
   
 }
 
-.question_tank_title{
+.right_tank_title{
   margin-right:29vw;
   border-bottom: solid 5px red;
 
@@ -57,31 +57,6 @@
 
 }
 
-
-.memory_tank{
-  background-image:url("/images/tank_img.jpg");
-  border: 2px solid orangered;
-  width:  300px;
-  height: 300px;
-  border-radius: 90%;
-  background-position: center center;
-  background-size: contain;
-  background-color:white;
-  margin-left:25vw;
-}
-
-.question_tank{
-  background-image:url("/images/tank_img_2.jpg");
-  border: 2px solid orangered;
-  width:  300px;
-  height: 300px;
-  border-radius: 90%;
-  background-position: center center;
-  background-size: contain;
-  background-color:white;
-  margin-right:25vw;
-
-}
 
 .tank_enter{
   margin-top:5vh;
@@ -206,6 +181,15 @@ EDIT ON
   text-align: center;
 }
 
+.p8{
+  background-color :black;
+  color:black;
+  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  font-size:30px;
+  font-weight:900;
+  text-align: center;
+}
+
 //WordTank一覧
 
 .tank_container2{
@@ -228,6 +212,12 @@ EDIT ON
   display:inline-block;
   margin-left:13vw;
 }
+
+.list2{
+  display:inline-block;
+  margin-left:2vw;
+}
+
 .tank_button{
   display: inline-flex;
   margin-bottom:50px;
@@ -236,37 +226,5 @@ EDIT ON
 
 .tank_name{
   width:250px;
+  overflow-wrap: break-word;
 }
-
-.tank_icon{
-  border: 2px solid orangered;
-  width:  250px;
-  height: 250px;
-  border-radius: 90%;
-  background-position: center center;
-  background-size: contain;
-  background-color:white;
-}
-
-.word_tank_icon_default{
-  background-image:url("/images/tank_img.jpg");
-  border: 2px solid orangered;
-  width:  250px;
-  height: 250px;
-  border-radius: 90%;
-  background-position: center center;
-  background-size: contain;
-  background-color:white;
-}
-
-.question_tank_icon_default{
-  background-image:url("/images/tank_img_2.jpg");
-  border: 2px solid orangered;
-  width:  250px;
-  height: 250px;
-  border-radius: 90%;
-  background-position: center center;
-  background-size: contain;
-  background-color:white;
-}
-

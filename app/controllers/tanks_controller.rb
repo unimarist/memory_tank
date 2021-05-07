@@ -6,11 +6,10 @@ class TanksController < ApplicationController
   def new
     @tank = Tank.new
     @id = params[:id]
-    
   end
 
   def create
-    @tank = Tank.new(word_tank_params)
+    @tank = Tank.new(tank_params)
     if @tank.save
       if @tank.tank_type == "単語"
       redirect_to word_search_tank_path(current_user.id)
@@ -27,11 +26,11 @@ class TanksController < ApplicationController
   end
 
   def update
-    @tank = Tank.find(params[:id])
-    @tank.update(word_tank_params)
-    if @tank.tank_type == "単語"
+    tank = Tank.find(params[:id])
+    tank.update(tank_params)
+    if tank.tank_type == "単語"
       redirect_to action: :word_search
-    elsif @tank.tank_type == "問題"
+    elsif tank.tank_type == "問題"
       redirect_to action: :question_search
     end
   end
@@ -62,7 +61,7 @@ class TanksController < ApplicationController
     end
   end
 
-  def word_tank_params
+  def tank_params
     params.require(:tank).permit(:tank_name,:tank_type,:tank_icon).merge(user_id: current_user.id)
   end
 

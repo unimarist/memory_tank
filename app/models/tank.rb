@@ -1,13 +1,14 @@
 class Tank < ApplicationRecord
   belongs_to :user
+  has_many :words
   has_one_attached :tank_icon
 
   def self.word_search(current)
-      Tank.where(tank_type: "単語").where(user_id: current)
+      Tank.where("tank_type = ?", "単語").where("user_id = ?", current)
   end
 
   def self.question_search(current)
-    Tank.where(tank_type: "問題").where(user_id: current)
+    Tank.where("tank_type = ?", "問題").where("user_id = ?", current)
   end
 
 
