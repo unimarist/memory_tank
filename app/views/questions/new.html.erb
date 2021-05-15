@@ -3,37 +3,39 @@
 
     <p class="p1">Questionの登録 : <%= @tank.tank_name %></p>
 
-     <%=form_with(model: [@tank,@question]) do |form| %>
+    <%= flash.now[:error_question] %> 
+
+      <%= form_with(model: [@tank,@question],local: true ) do |form| %>
 
       <div class="field">
-        <%= form.label :question ,"Question" %><br />
+        <%= form.label :question ,"Question (必須：500文字以内)" %><br />
         <%= form.text_area :question, class:"text_area" %>
       </div>
       <div class="field">
-        <%= form.label :answer_a ,"解答選択肢-A" %><br />
+        <%= form.label :answer_a ,"解答選択肢-A (必須：500文字以内)" %><br />
         <%= form.text_area :answer_a, class:"text_area" %>
       </div>
       <div class="field">
-        <%= form.label :answer_b ,"解答選択肢-B" %><br />
+        <%= form.label :answer_b ,"解答選択肢-B (必須：500文字以内)" %><br />
         <%= form.text_area :answer_b, class:"text_area" %>
       </div>
       <div class="field">
-        <%= form.label :answer_c ,"解答選択肢-C" %><br />
+        <%= form.label :answer_c ,"解答選択肢-C (必須：500文字以内)" %><br />
         <%= form.text_area :answer_c, class:"text_area" %>
       </div>
       <div class="field">
-        <%= form.label :answer_d ,"解答選択肢-D" %><br />
+        <%= form.label :answer_d ,"解答選択肢-D (必須：500文字以内)" %><br />
         <%= form.text_area :answer_d, class:"text_area" %>
       </div>
       <div class="field">
-        <%= form.label :correct_answer ,"正解選択肢" %><br />
+        <%= form.label :correct_answer ,"正解選択肢 (必須)" %><br />
         <p>A:<%= form.radio_button :correct_answer,'A' %></p>
         <p>B:<%= form.radio_button :correct_answer, 'B' %></p>
         <p>C:<%= form.radio_button :correct_answer, 'C' %></p>
         <p>D:<%= form.radio_button :correct_answer, 'D' %></p>
       </div>
       <div class="field">
-        <%= form.label :description ,"解説" %><br />
+        <%= form.label :description ,"解説 (必須：500文字以内)" %><br />
         <%= form.text_area :description, class:"text_area" %>
       </div>
 

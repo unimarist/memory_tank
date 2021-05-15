@@ -3,6 +3,7 @@ class Tank < ApplicationRecord
   has_many :words
   has_many :questions
   has_one_attached :tank_icon
+  validates :tank_name, presence: true, length: { maximum: 30 }
 
   def self.word_search(current)
       Tank.where("tank_type = ?", "単語").where("user_id = ?", current)

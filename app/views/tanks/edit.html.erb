@@ -6,14 +6,30 @@
     <p class="p1">QuestionTankの編集</p>
   <% end %>
 
+   <%= flash[:error_tank] %>
+
    <%=form_with model: @tank, local: true do |form| %>
 
       <div class="field">
-        <%= form.label :tank_name ,"Tank名" %><br />
+        <%= form.label :tank_name ,"Tank名 (必須：30文字以内)"  %><br />
         <%= form.text_field :tank_name %>
       </div>
 
         <div class="field">
+        <p>現在のTankアイコン</p><br />
+          <% if @tank.tank_icon.attached?  %>
+        <div>
+            <%= image_tag(@tank.tank_icon, class: 'tank_icon') %>
+        </div>
+      <% elsif @tank.tank_type == "単語" %>
+      <div>    
+            <%= image_tag("/images/tank_img.jpg", class: 'tank_icon' )  %>
+      </div>
+      <% else %>  
+       <div>    
+            <%= image_tag("/images/tank_img_2.jpg", class: 'tank_icon' )  %>
+      </div>
+      <% end %>
         <%= form.label :tank_icon ,"Tankアイコンを変更する場合は選択" %><br />
         <%= form.file_field :tank_icon %>
         </div>

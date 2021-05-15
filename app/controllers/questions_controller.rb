@@ -10,10 +10,12 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = Question.new(question_params)
-    if question.save
-      redirect_to tank_questions_path(question.tank_id)
+    @question = Question.new(question_params)
+    @tank = Tank.find_by(id: @question.tank_id)
+    if @question.save
+      redirect_to tank_questions_path(@question.tank_id)
     else
+      flash.now[:error_question] = "各項目は必須です。500字以内で入力して下さい。/Questionは未登録である必要があります。"
       render :new
     end
   end
@@ -34,12 +36,17 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    question = Question.find(params[:id])
-    question.update(question_params)
-    if question.correct_rate >= 70
-    redirect_to learned_tank_questions_path(question.tank_id)
+    @question = Question.find(params[:id])
+    @tank = Tank.find_by(id: @question.tank_id)
+    if @question.update(question_params)
+       if @question.correct_rate >= 70
+           redirect_to learned_tank_questions_path(@question.tank_id)
+       else
+           redirect_to unlearned_tank_questions_path(@question.tank_id)
+       end
     else
-    redirect_to unlearned_tank_questions_path(question.tank_id)
+      flash.now[:error_question] = "各項目は必須です。500字以内で入力して下さい。/Questionは未登録である必要があります。"
+      render :edit
     end
   end
 
