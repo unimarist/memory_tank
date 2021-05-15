@@ -1,0 +1,69 @@
+<div class="tank_container2">
+
+ <div class="word_top">
+     <p class="p3">習得済Question : <%= @tank.tank_name %> </p>
+  </div>
+
+ <div class="word_top_button">
+      <%= link_to "戻る", tank_questions_path(@tank.id), class:  "btn btn--blue btn--shadow" %>
+ </div>
+
+
+  <% @questions.each do |question|   %>
+
+   <div class=list2 >
+  
+     <div class="question2">
+        <p class="p12">問題</p> 
+        <p class="p17">My正答率：<%= question.correct_rate %>%(<%= question.correct_count + question.uncorrect_count %>回中<%= question.correct_count %>回正解)</p>
+     </div>
+
+      <div class="question">
+     <%=simple_format(question.question,class: "p11") %>
+     </div>
+     
+      
+      <div class="question" >
+      <%= link_to "(A)", check_a_tank_question_path(@tank.id,question.id), class: "btn btn--orange btn--shadow" %><%=simple_format(question.answer_a,class: "p12") %>
+     </div>
+      <div class="question" >
+       <%= link_to "(B)", check_b_tank_question_path(@tank.id,question.id), class: "btn btn--blue btn--shadow" %><%=simple_format(question.answer_b,class: "p12") %>
+     </div>
+      <div class="question" >
+       <%= link_to "(C)", check_c_tank_question_path(@tank.id,question.id), class: "btn btn--orange btn--shadow" %><%=simple_format(question.answer_c,class: "p12") %>
+     </div>
+      <div class="question" >
+       <%= link_to "(D)", check_d_tank_question_path(@tank.id,question.id), class: "btn btn--blue btn--shadow" %><%=simple_format(question.answer_d,class: "p12") %>
+     </div>
+
+     <div class="p14">
+      <% if question.question == flash[:com] %>
+      <div id="link" >
+      <%= flash[:des] %>
+      </div>
+      <% end %>
+     </div>
+
+
+    
+
+      <div class="question_button">
+         <%= link_to "編集", edit_tank_question_path(@tank.id,question.id), class: "btn btn--orange btn--shadow" %>
+          <%= link_to "削除", delete_confirm_tank_question_path(@tank.id,question.id),class:  "btn btn--blue btn--shadow" %>
+      </div>
+    </div>
+
+  <% end %>
+
+</div>
+
+<footer>
+     <div class="footer_left">
+        <div class="footer_left_main">
+           <a href="/"><p class="p2">MemoryTank</p></a>
+        </div>
+        <div class="fotter_left_sub">
+           <p class="p2">〜効率的なナレッジ蓄積と知識定着を支援〜</p>
+        </div>
+     </div>
+</footer>

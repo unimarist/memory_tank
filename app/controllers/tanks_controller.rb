@@ -35,6 +35,10 @@ class TanksController < ApplicationController
     end
   end
 
+  def delete_confirm
+    @tank = Tank.find(params[:id])
+  end
+
   def destroy
     tank = Tank.find(params[:id])
     if tank.tank_type == "単語"

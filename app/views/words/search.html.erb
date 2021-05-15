@@ -2,44 +2,40 @@
 
  
  <div class="word_top">
-     <p class="p3">未習得Word : <%= @tank.tank_name %></p>
+     <p class="p3"><%= @word_level %><%= @tank.tank_name %></p>
   </div>
 
- <div class="search_top">
-      <%= form_with(url: search_tank_words_path(@tank.id), local: true, method: :get) do |form|  %>
-      <%= form.text_field :key, placeholder: "Wordを検索する" %>
-      <%= form.hidden_field :correct_rate, value: "未習得Word :" %>
-      <%= form.submit "検索", class: "btn btn--orange btn--shadow" %>
-      <% end %>
-      <%= link_to "戻る", tank_words_path(@tank.id), class:  "btn btn--blue btn--shadow" %>   
+ <div class="word_top_button">
+      <% if @word_level == "未習得Word :" %>
+       <%= link_to "戻る", unlearned_tank_words_path(@tank.id), class:  "btn btn--blue btn--shadow" %>
+      <% elsif @word_level == "習得済Word :"  %>
+      <%= link_to "戻る", learned_tank_words_path(@tank.id), class:  "btn btn--blue btn--shadow" %>
+      <% end %> 
  </div>
 
   <% @words.each do |word|   %>
 
    <div class=list2 >
 
-    
       <% if word.word == flash[:com] %>
       <div id="link" ,class="p15">
       <%= flash[:des] %>
       </div>
       <% end %>
-
-   
   
      <div class="tank_name">
          <p class="p6"><%= word.word %></p>
      </div>
       <div class="tank_name2" >
          <p class="p9"  ><%= word.meaning %></p>
-      <p class="p16">My正答率：<%= word.correct_rate %>%<br>(<%= word.correct_count + word.uncorrect_count %>回中<%= word.correct_count %>回正解)</p>
+         <p class="p16">My正答率：<%= word.correct_rate %>%<br>(<%= word.correct_count + word.uncorrect_count %>回中<%= word.correct_count %>回正解)</p>
      </div>
 
       <div class="word_button">
        　<%= link_to "分かった！", correct_count_tank_word_path(@tank.id,word.id), class: "btn btn--orange btn--shadow" %>
          <%= link_to "分からなかった！", uncorrect_count_tank_word_path(@tank.id,word.id) ,class:  "btn btn--blue btn--shadow" %>
          <%= link_to "編集", edit_tank_word_path(@tank.id,word.id), class: "btn btn--orange btn--shadow" %>
-         <%= link_to "削除", delete_confirm_tank_word_path(@tank.id,word.id),class:  "btn btn--blue btn--shadow" %>
+         <%= link_to "削除", tank_word_path(@tank.id,word.id), method: :delete ,class:  "btn btn--blue btn--shadow" %>
       </div>
     </div>
 

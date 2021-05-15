@@ -1,0 +1,62 @@
+<div class="question_container">
+  <div class="container_2">
+
+    <p class="p1">Questionを削除しますか？</p>
+
+       <div class="field">
+        <p>Question</p><br />
+        <%= @question.question %>
+      </div>
+
+      <div class="field">
+        <p>解答選択肢-A</p><br />
+        <%= @question.answer_a %>
+      </div>
+
+       <div class="field">
+        <p>解答選択肢-B</p><br />
+        <%= @question.answer_b %>
+      </div>
+
+       <div class="field">
+        <p>解答選択肢-C</p><br />
+        <%= @question.answer_c %>
+      </div>
+
+       <div class="field">
+        <p>解答選択肢-D</p><br />
+        <%= @question.answer_d %>
+      </div>
+
+      <div class="field">
+        <p>正解選択肢</p><br />
+        <%= @question.correct_answer %>
+      </div>
+
+      <div class="field">
+        <p>解説</p><br />
+        <%= @question.description %>
+      </div>
+  
+      <div class="field">
+        <%= link_to "削除", tank_question_path(@question.tank_id), method: :delete ,class:  "btn btn--blue btn--shadow" %>
+          <% if @question.correct_rate >= 70 %>
+         <%= link_to "戻る", learned_tank_questions_path(@question.tank_id), class: "sub" %>
+         <% else %>
+          <%= link_to "戻る", unlearned_tank_questions_path(@question.tank_id), class: "sub" %>
+          <% end %>
+      </div>
+
+  </div>
+</div>
+
+<footer>
+     <div class="footer_left">
+        <div class="footer_left_main">
+           <a href="/"><p class="p2">MemoryTank</p></a>
+        </div>
+        <div class="fotter_left_sub">
+           <p class="p2">〜効率的なナレッジ蓄積と知識定着を支援〜</p>
+        </div>
+     </div>
+</footer>

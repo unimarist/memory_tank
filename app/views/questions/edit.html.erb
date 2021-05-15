@@ -1,0 +1,64 @@
+<div class="question_container">
+  <div class="container_2">
+
+    <p class="p1">Questionの編集 : <%= @tank.tank_name %></p>
+
+     <%=form_with(model: [@tank,@question]) do |form| %>
+
+      <div class="field">
+        <%= form.label :question ,"Question" %><br />
+        <%= form.text_area :question, class:"text_area" %>
+      </div>
+      <div class="field">
+        <%= form.label :answer_a ,"解答選択肢-A" %><br />
+        <%= form.text_area :answer_a, class:"text_area" %>
+      </div>
+      <div class="field">
+        <%= form.label :answer_b ,"解答選択肢-B" %><br />
+        <%= form.text_area :answer_b, class:"text_area" %>
+      </div>
+      <div class="field">
+        <%= form.label :answer_c ,"解答選択肢-C" %><br />
+        <%= form.text_area :answer_c, class:"text_area" %>
+      </div>
+      <div class="field">
+        <%= form.label :answer_d ,"解答選択肢-D" %><br />
+        <%= form.text_area :answer_d, class:"text_area" %>
+      </div>
+      <div class="field">
+        <%= form.label :correct_answer ,"正解選択肢" %><br />
+        <p>A:<%= form.radio_button :correct_answer,'A' %></p>
+        <p>B:<%= form.radio_button :correct_answer, 'B' %></p>
+        <p>C:<%= form.radio_button :correct_answer, 'C' %></p>
+        <p>D:<%= form.radio_button :correct_answer, 'D' %></p>
+      </div>
+      <div class="field">
+        <%= form.label :description ,"解説" %><br />
+        <%= form.text_area :description, class:"text_area" %>
+      </div>
+
+
+      <div class="field">
+         <%= form.submit "編集する" ,class: "sub" %>
+          <% if @question.correct_rate >= 70 %>
+         <%= link_to "戻る", learned_tank_questions_path(@question.tank_id), class: "sub" %>
+         <% else %>
+          <%= link_to "戻る", unlearned_tank_questions_path(@question.tank_id), class: "sub" %>
+          <% end %>
+      </div>
+    <% end %>
+
+
+  </div>
+</div>
+
+<footer>
+     <div class="footer_left">
+        <div class="footer_left_main">
+           <a href="/"><p class="p2">MemoryTank</p></a>
+        </div>
+        <div class="fotter_left_sub">
+           <p class="p2">〜効率的なナレッジ蓄積と知識定着を支援〜</p>
+        </div>
+     </div>
+</footer>
