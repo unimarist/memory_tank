@@ -1,19 +1,20 @@
 <div class="contents row">
   <div class="container">
+    
+    <p class="p1">Wordの登録 : <%= @tank.tank_name %> </p>
 
-    <p class="p1">Wordの登録 : <%= @tank.tank_name %></p>
+    <%= flash[:error_word] %> 
 
-     <%=form_with(model: [@tank,@word]) do |form| %>
+     <%= form_with(model: [@tank,@word],local: true ) do |form| %>
 
       <div class="field">
-        <%= form.label :word ,"Word" %><br />
+        <%= form.label :word ,"Word (必須：30文字以内)" %><br />
         <%= form.text_field :word %>
       </div>
       <div class="field">
-        <%= form.label :meaning ,"意味" %><br />
+        <%= form.label :meaning ,"意味 (必須：120文字以内)" %><br />
         <%= form.text_field :meaning %>
       </div>
-
 
       <div class="field">
         <%= form.hidden_field :correct_count, value: 0 %>

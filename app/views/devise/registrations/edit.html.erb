@@ -6,16 +6,21 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
 <div class="field">
-        <%= f.label :username %> (最大6文字まで)<br />
-        <%= f.text_field :username, autofocus: true, maxlength: "6" %>
+        <%= f.label :username %> (最大15文字まで)<br />
+        <%= f.text_field :username, autofocus: true, maxlength: "15" %>
 </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
+   <p>現在のUserアイコン</p><br />
+         <% if current_user.user_icon.presence %>
+        <div>
+            <%= image_tag(current_user.user_icon, class: 'tank_icon') %>
+        </div>
+      <% else %>  
+       <div>    
+            <%= image_tag("/images/default_user.png", class: 'tank_icon')  %>
+      </div>
+      <% end %>
     <%= f.label :user_icon %><br />
     <%= f.file_field :user_icon %>
   </div>
@@ -60,9 +65,6 @@
         <div class="fotter_left_sub">
            <p class="p2">〜効率的なナレッジ蓄積と知識定着を支援〜</p>
         </div>
-     </div>
-     <div class="footer_right">
-        <div id="page_top"><a href="#"></a></div>
      </div>
     </footer>
 </div>

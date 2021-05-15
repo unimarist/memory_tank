@@ -7,9 +7,11 @@
    <p class="p1">QuestionTankの作成</p>
    <% end %>
 
+    <%= flash[:error_tank] %>
+
      <%=form_with model: @tank, local: true do |form| %>
       <div class="field">
-        <%= form.label :tank_name ,"Tank名" %><br />
+        <%= form.label :tank_name ,"Tank名 (必須：30文字以内)" %><br />
         <%= form.text_field :tank_name %>
       </div>
        

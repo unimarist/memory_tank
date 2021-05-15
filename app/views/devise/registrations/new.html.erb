@@ -5,20 +5,13 @@
       <%= devise_error_messages! %>
 
       <div class="field">
-        <%= f.label :username %> (最大6文字まで)<br />
-        <%= f.text_field :username, autofocus: true, maxlength: "6" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email %>
+        <%= f.label :username %> (最大15文字まで)<br />
+        <%= f.text_field :username, autofocus: true, maxlength: "15" %>
       </div>
 
       <div class="field">
         <%= f.label :password %>
-        <% if @minimum_password_length %>
-          (最低<%= @minimum_password_length %> 文字以上)
-        <% end %><br />
+          (最低<%= @minimum_password_length %> 文字以上)<br />
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
 
@@ -29,6 +22,7 @@
 
       <div class="actions">
         <%= f.submit "登録する", class: "sub" %>
+         <%= link_to "戻る", "/", class:  "btn btn--blue btn--shadow" %> 
       </div>
     <% end %>
   </div>
@@ -40,9 +34,6 @@
         <div class="fotter_left_sub">
            <p class="p2">〜効率的なナレッジ蓄積と知識定着を支援〜</p>
         </div>
-     </div>
-     <div class="footer_right">
-        <div id="page_top"><a href="#"></a></div>
      </div>
     </footer>
 </div>

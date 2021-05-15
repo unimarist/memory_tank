@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "tanks#index"
   get '/tanks/:id', to: 'tanks#new'
 
-    resources :tanks , :except => :show do
+    resources :tanks , :except => [:show,:new] do
       member do
         get 'word_search'
         get 'question_search'

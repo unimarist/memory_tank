@@ -10,10 +10,12 @@ class WordsController < ApplicationController
   end
 
   def create
-    word = Word.new(word_params)
-    if word.save
-      redirect_to tank_words_path(word.tank_id)
+    @word = Word.new(word_params)
+    @tank = Tank.find_by(id: @word.tank_id)
+    if @word.save
+      redirect_to tank_words_path(@word.tank_id)
     else
+      flash.now[:error_word] = "「Word」は必須かつ未登録である必要があります。30字以内で入力して下さい。/「意味」は必須です。120文字以内で入力して下さい。"
       render :new
     end
   end
@@ -24,12 +26,17 @@ class WordsController < ApplicationController
   end
 
   def update
-    word = Word.find(params[:id])
-    word.update(word_params)
-    if word.correct_rate >= 70
-    redirect_to learned_tank_words_path(word.tank_id)
+    @word = Word.find(params[:id])
+    @tank = Tank.find_by(id: @word.tank_id)
+   if  @word.update(word_params)
+     if @word.correct_rate >= 70
+        redirect_to learned_tank_words_path(@word.tank_id)
+      else
+        redirect_to unlearned_tank_words_path(@word.tank_id)
+      end
     else
-    redirect_to unlearned_tank_words_path(word.tank_id)
+      flash[:error_word] = "「Word」は必須かつ未登録である必要があります。30字以内で入力して下さい。/「意味」は必須です。120文字以内で入力して下さい。"
+      render :edit
     end
   end
 
@@ -95,7 +102,14 @@ class WordsController < ApplicationController
     @tank = Tank.find_by(id: id)  
     key = params[:key]
     @word_level = params[:correct_rate]
-    @words = Word.search(id,key,@word_level)
+
+    if @word_level == "未習得Word :" && (key.nil? || key == "")
+      redirect_to unlearned_tank_words_path(id)
+     elsif @word_level == "習得済Word :" && (key.nil? || key == "")
+      redirect_to learned_tank_words_path(id)
+     else
+      @words = Word.search(id,key,@word_level)
+     end
   end
 
 
