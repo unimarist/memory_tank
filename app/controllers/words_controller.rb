@@ -33,6 +33,11 @@ class WordsController < ApplicationController
     end
   end
 
+  def delete_confirm
+    @word = Word.find_by(id: params[:id])
+    @tank = Tank.find_by(id: params[:tank_id])
+  end
+
   def destroy
     word = Word.find(params[:id])
     tank = Tank.find_by(id: params[:tank_id])
@@ -46,8 +51,8 @@ class WordsController < ApplicationController
   end
 
   def learned
-    @words = Word.learned(params[:tank_id])
-    @tank = Tank.find_by(id: params[:tank_id])
+    @words = Word.includes(:tank,:user).learned(params[:tank_id])
+    @tank = Tank.includes(:user).find_by(id: params[:tank_id])
   end
 
   def unlearned  
@@ -56,32 +61,43 @@ class WordsController < ApplicationController
   end
 
   def correct_count
-    word = Word.find(params[:id])
-    correct_rate = word.correct_rate
+    word = Word.find_by(id: params[:id])
     word.increment(:correct_count, 1)
+    flash[:des] = "⭕️ 正解！" 
+    flash[:com] = word.word
     sum = word.correct_count + word.uncorrect_count
     word.correct_rate = word.correct_count * 100  / sum if sum > 0
     word.save
-    if correct_rate >= 70
+    if word.correct_rate >= 70
+      redirect_to learned_tank_words_path(word.tank_id,anchor: 'link')
+      else
+      redirect_to unlearned_tank_words_path(word.tank_id,anchor: 'link')
+      end
+  end
+
+  def uncorrect_count
+    word = Word.find(params[:id])
+    word.increment(:uncorrect_count, 1)
+    sum = word.correct_count + word.uncorrect_count
+    word.correct_rate = word.correct_count * 100  / sum if sum > 0
+    word.save
+    flash[:des] = "❌ 不正解！" 
+    flash[:com] = word.word
+    if word.correct_rate >= 70
       redirect_to learned_tank_words_path(word.tank_id)
       else
       redirect_to unlearned_tank_words_path(word.tank_id)
       end
   end
 
-  def uncorrect_count
-    word = Word.find(params[:id])
-    correct_rate = word.correct_rate
-    word.increment(:uncorrect_count, 1)
-    sum = word.correct_count + word.uncorrect_count
-    word.correct_rate = word.correct_count * 100  / sum if sum > 0
-    word.save
-    if correct_rate >= 70
-      redirect_to learned_tank_words_path(word.tank_id)
-      else
-      redirect_to unlearned_tank_words_path(word.tank_id)
-      end
+  def search
+    id = params[:tank_id]
+    @tank = Tank.find_by(id: id)  
+    key = params[:key]
+    @word_level = params[:correct_rate]
+    @words = Word.search(id,key,@word_level)
   end
+
 
   private
   def word_params

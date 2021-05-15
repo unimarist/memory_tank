@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_04_231439) do
+ActiveRecord::Schema.define(version: 2021_05_09_000645) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -31,6 +31,23 @@ ActiveRecord::Schema.define(version: 2021_05_04_231439) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "question"
+    t.text "answer_a"
+    t.text "answer_b"
+    t.text "answer_c"
+    t.text "answer_d"
+    t.text "correct_answer"
+    t.text "description"
+    t.integer "correct_count"
+    t.integer "uncorrect_count"
+    t.float "correct_rate"
+    t.integer "user_id"
+    t.integer "tank_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "tanks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -61,7 +78,7 @@ ActiveRecord::Schema.define(version: 2021_05_04_231439) do
     t.string "meaning"
     t.integer "correct_count"
     t.integer "uncorrect_count"
-    t.integer "correct_rate"
+    t.float "correct_rate"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

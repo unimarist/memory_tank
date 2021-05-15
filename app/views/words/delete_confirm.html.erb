@@ -1,30 +1,26 @@
 <div class="contents row">
   <div class="container">
 
-    <p class="p1">Wordの編集 : <%= @tank.tank_name %></p>
-
-     <%=form_with(model: [@tank,@word]) do |form| %>
+    <p class="p1">Wordを削除しますか？</p>
 
       <div class="field">
-        <%= form.label :word ,"Word" %><br />
-        <%= form.text_field :word %>
-      </div>
-      <div class="field">
-        <%= form.label :meaning ,"意味" %><br />
-        <%= form.text_field :meaning %>
+        <p>Word</p><br />
+        <%= @word.word %>
       </div>
 
-    
       <div class="field">
-         <%= form.submit "編集する" ,class: "sub" %>
+        <p>意味</p><br />
+        <%= @word.meaning %>
+      </div>
+      
+      <div class="field">
+         <%= link_to "削除", tank_word_path(@tank.id), method: :delete ,class:  "btn btn--blue btn--shadow" %>
          <% if @word.correct_rate >= 70 %>
          <%= link_to "戻る", learned_tank_words_path(@word.tank_id), class: "sub" %>
          <% else %>
           <%= link_to "戻る", unlearned_tank_words_path(@word.tank_id), class: "sub" %>
           <% end %>
       </div>
-    <% end %>
-
 
   </div>
 

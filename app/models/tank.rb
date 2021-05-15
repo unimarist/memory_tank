@@ -1,6 +1,7 @@
 class Tank < ApplicationRecord
   belongs_to :user
   has_many :words
+  has_many :questions
   has_one_attached :tank_icon
 
   def self.word_search(current)

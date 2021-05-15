@@ -4,7 +4,7 @@
 
 //LP
 .tank_container{
-  background-image:url("/images/bk_img_2.jpg");
+  background-color:#F4FBFE;
   text-align: center;
   padding-top:120px;
   background-size: contain;
@@ -94,64 +94,14 @@ footer{
 }
 
 
-
 .footer_right{
   display: flex;
   margin:20px;
 }
 
-Result Skip Results Iframe
-EDIT ON
-#page_top{
-  width: 100px;
-  height: 60px;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  opacity: 0.6;
-}
-
-#page_top a{
-  position: relative;
-  display: block;
-  width: 100px;
-  height: 60px;
-  text-decoration: none;
-}
-
-#page_top a::before{
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-  content: '\f102';
-  font-size: 25px;
-  color: orangered;
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  top: -25px;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  text-align: center;
-}
-
-#page_top a::after{
-  content: 'PAGE TOP';
-  font-size: 13px;
-  color: orangered;
-  position: absolute;
-  top: 30px;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  text-align: center;
-}
-
 
 .p3{
-  color:orange;
+  color:#333333;
   font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
   font-size:30px;
   font-weight:900;
@@ -174,7 +124,7 @@ EDIT ON
 }
 
 .p6{
-  color:orange;
+  color:#333333;
   font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
   font-size:30px;
   font-weight:900;
@@ -193,7 +143,7 @@ EDIT ON
 //WordTank一覧
 
 .tank_container2{
-  background-image:url("/images/bk_img_2.jpg");
+  background-color:#F4FBFE;
   padding-top:120px;
   background-size: contain;
   min-height:92vh;
@@ -216,6 +166,7 @@ EDIT ON
 .list2{
   display:inline-block;
   margin-left:2vw;
+ 
 }
 
 .tank_button{
@@ -228,3 +179,11 @@ EDIT ON
   width:250px;
   overflow-wrap: break-word;
 }
+
+.tank_name2{
+  width:350px;
+  overflow-wrap: break-word;
+  display:flex;
+
+}
+

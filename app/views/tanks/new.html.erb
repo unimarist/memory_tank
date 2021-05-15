@@ -30,7 +30,11 @@
 
         <div class="field">
          <%= form.submit "作成する" ,class: "sub" %>
-         <%= link_to "戻る", :back, class: "sub" %>
+         <% if @id == "1" %>
+         <%= link_to "戻る", word_search_tank_path(current_user.id) , class: "sub" %>
+          <% elsif @id == "2" %> 
+            <%= link_to "戻る", question_search_tank_path(current_user.id) , class: "sub" %>
+         <% end %>
         </div>
      <% end %>
   </div>
@@ -44,9 +48,6 @@
         <div class="fotter_left_sub">
            <p class="p2">〜効率的なナレッジ蓄積と知識定着を支援〜</p>
         </div>
-     </div>
-     <div class="footer_right">
-        <div id="page_top"><a href="#"></a></div>
      </div>
     </footer>
 </div>

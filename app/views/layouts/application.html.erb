@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MemoryTank</title>
+    <title >MemoryTank</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
-  
   </head>
 
   <body>
@@ -21,6 +19,8 @@
         </div>
         <div class="header_left_sub">
            <p class="p1">〜効率的なナレッジ蓄積と知識定着を支援〜</p>
+        </div>
+        <div class="p13">
         </div>
       </div>
 
@@ -52,6 +52,8 @@
         <% end %>
       </div>
     </header>
+
+   
 
     <%= yield %>
 

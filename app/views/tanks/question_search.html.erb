@@ -16,17 +16,17 @@
       
      <% if question_tank.tank_icon.attached?  %>
         <div>
-          <%= link_to image_tag(question_tank.tank_icon, class: 'tank_icon' )  , edit_tank_path(question_tank.id)  %>
+          <%= link_to image_tag(question_tank.tank_icon, class: 'tank_icon' )  , tank_questions_path(question_tank.id)  %>
         </div>
       <% else %>
       <div>
-          <%= link_to image_tag("/images/tank_img_2.jpg", class: 'tank_icon' )  , edit_tank_path(question_tank.id)   %>    
+          <%= link_to image_tag("/images/tank_img_2.jpg", class: 'tank_icon' )  , tank_questions_path(question_tank.id)   %>    
       </div>
       <% end %>  
 
       <div class="tank_button">
          <%= link_to "編集", edit_tank_path(question_tank.id), class: "btn btn--orange btn--shadow" %>
-         <%= link_to "削除", tank_path(question_tank.id), method: :delete ,class:  "btn btn--blue btn--shadow" %>
+         <%= link_to "削除",delete_confirm_tank_path(question_tank.id) ,class:  "btn btn--blue btn--shadow" %>
       </div>
     </div>
 
@@ -41,8 +41,5 @@
         <div class="fotter_left_sub">
            <p class="p2">〜効率的なナレッジ蓄積と知識定着を支援〜</p>
         </div>
-     </div>
-     <div class="footer_right">
-        <div id="page_top"><a href="#"></a></div>
      </div>
 </footer>

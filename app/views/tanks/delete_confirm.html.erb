@@ -1,32 +1,41 @@
 <div class="contents row">
   <div class="container">
    <% if @tank.tank_type == "単語" %>
-    <p class="p1">WordTankの編集</p>
+    <p class="p1">WordTankを削除しますか？</p>
    <% elsif @tank.tank_type == "問題" %> 
-    <p class="p1">QuestionTankの編集</p>
+    <p class="p1">QuestionTankを削除しますか？</p>
   <% end %>
 
-   <%=form_with model: @tank, local: true do |form| %>
-
       <div class="field">
-        <%= form.label :tank_name ,"Tank名" %><br />
-        <%= form.text_field :tank_name %>
+        <p>Tank名</p><br />
+        <%= @tank.tank_name %>
       </div>
 
         <div class="field">
-        <%= form.label :tank_icon ,"Tankアイコンを変更する場合は選択" %><br />
-        <%= form.file_field :tank_icon %>
+        <p>Tankアイコン</p><br />
+          <% if @tank.tank_icon.attached?  %>
+        <div>
+            <%= image_tag(@tank.tank_icon, class: 'tank_icon') %>
+        </div>
+      <% elsif @tank.tank_type == "単語" %>
+      <div>    
+            <%= image_tag("/images/tank_img.jpg", class: 'tank_icon' )  %>
+      </div>
+      <% else %>  
+       <div>    
+            <%= image_tag("/images/tank_img_2.jpg", class: 'tank_icon' )  %>
+      </div>
+      <% end %>
         </div>
 
         <div class="field">
-         <%= form.submit "編集する" ,class: "sub" %>
+         <%= link_to "削除", tank_path(@tank.id), method: :delete ,class:  "btn btn--blue btn--shadow" %>
          <% if @tank.tank_type == "単語" %>
          <%= link_to "戻る", word_search_tank_path(current_user.id) , class: "sub" %>
           <% elsif @tank.tank_type == "問題" %> 
             <%= link_to "戻る", question_search_tank_path(current_user.id) , class: "sub" %>
          <% end %>
         </div>
-         <% end %>
   </div>
 
 
