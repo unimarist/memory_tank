@@ -1,16 +1,15 @@
 Rails.application.routes.draw do
-  get 'tanks/index'
   devise_for :users
-  root to: "tanks#index"
-  get '/tanks/:id', to: 'tanks#new'
 
-    resources :tanks , :except => [:show,:new] do
+  root to: "tanks#index"
+  get '/tanks/:tank_type', to: 'tanks#new'
+
+    resources :tanks , :except => [:new,:show] do
       member do
-        get 'word_search'
-        get 'question_search'
+        get 'word_tank_index'
+        get 'question_tank_index'
         get 'delete_confirm'
       end
-
       resources :words do
         collection do
           get 'learned'
@@ -23,7 +22,6 @@ Rails.application.routes.draw do
           get 'delete_confirm'
         end
       end
-
       resources :questions do
         collection do
           get 'learned'
@@ -38,6 +36,4 @@ Rails.application.routes.draw do
         end
       end
     end
-
-  
 end

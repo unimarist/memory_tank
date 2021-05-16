@@ -3,7 +3,7 @@
   <p class="p3">WordTank：<%= @tank.tank_name %></p>
   <div class="tank_top">
      <%= link_to "Wordを登録する", new_tank_word_path(@tank.id), class: "btn btn--orange btn--shadow" %>
-     <%= link_to "戻る", word_search_tank_path(current_user.id), class:  "btn btn--blue btn--shadow" %> 
+     <%= link_to "戻る", word_tank_index_tank_path(current_user.id), class:  "btn btn--blue btn--shadow" %> 
   </div>
 
    <p class="p7">Wordを登録するとまずは「未習得Tank」に蓄積されるよ！</p>

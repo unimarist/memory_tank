@@ -41,11 +41,11 @@
 
 
       <div class="field">
-         <%= form.submit "編集する" ,class: "sub" %>
+         <%= form.submit "編集する" ,class: "btn btn--orange btn--shadow" %>
           <% if @question.correct_rate >= 70 %>
-         <%= link_to "戻る", learned_tank_questions_path(@question.tank_id), class: "sub" %>
+         <%= link_to "戻る", learned_tank_questions_path(@question.tank_id), class: "btn btn--blue btn--shadow" %>
          <% else %>
-          <%= link_to "戻る", unlearned_tank_questions_path(@question.tank_id), class: "sub" %>
+          <%= link_to "戻る", unlearned_tank_questions_path(@question.tank_id), class: "btn btn--blue btn--shadow" %>
           <% end %>
       </div>
     <% end %>

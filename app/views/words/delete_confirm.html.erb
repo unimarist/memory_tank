@@ -14,11 +14,11 @@
       </div>
       
       <div class="field">
-         <%= link_to "削除", tank_word_path(@tank.id), method: :delete ,class:  "btn btn--blue btn--shadow" %>
+         <%= link_to "削除", tank_word_path(@tank.id), method: :delete ,class:  "btn btn--orange btn--shadow" %>
          <% if @word.correct_rate >= 70 %>
-         <%= link_to "戻る", learned_tank_words_path(@word.tank_id), class: "sub" %>
+         <%= link_to "戻る", learned_tank_words_path(@word.tank_id), class: "btn btn--blue btn--shadow" %>
          <% else %>
-          <%= link_to "戻る", unlearned_tank_words_path(@word.tank_id), class: "sub" %>
+          <%= link_to "戻る", unlearned_tank_words_path(@word.tank_id), class: "btn btn--blue btn--shadow" %>
           <% end %>
       </div>
 

@@ -9,14 +9,12 @@ class Question < ApplicationRecord
   validates :correct_answer, presence: true, length: { maximum: 500 }
   validates :description, presence: true, length: { maximum: 500 }
 
-  def self.learned(id)
-    Question.where("tank_id = ?",id).where("correct_rate >= ?",70)
+  def self.learned(tank_id)
+    Question.where("tank_id = ?",tank_id).where("correct_rate >= ?",70)
   end
 
-  def self.unlearned(id)
-    Question.where("tank_id = ?",id).where("correct_rate < ?",70)
+  def self.unlearned(tank_id)
+    Question.where("tank_id = ?",tank_id).where("correct_rate < ?",70)
   end
-
-
 
 end

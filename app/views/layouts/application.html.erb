@@ -9,7 +9,6 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
-     <%# <meta name="turbolinks-visit-control" content="reload"> %>
   </head>
 
   <body>
@@ -30,7 +29,7 @@
          <% if user_signed_in? %>
            <div class="login_right">
             <% if current_user.user_icon.presence %>
-                <%= image_tag(current_user.user_icon, class: 'icon_image')  %>
+               <%= link_to image_tag(current_user.user_icon, class: 'icon_image' )  , edit_user_registration_path  %>
              <% else %> 
                <div>
                  <%= link_to image_tag("/images/default_user.png", class: 'circle-image' )  , edit_user_registration_path  %>

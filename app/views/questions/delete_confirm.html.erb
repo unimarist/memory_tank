@@ -39,11 +39,11 @@
       </div>
   
       <div class="field">
-        <%= link_to "削除", tank_question_path(@question.tank_id), method: :delete ,class:  "btn btn--blue btn--shadow" %>
+        <%= link_to "削除", tank_question_path(@question.tank_id), method: :delete ,class:  "btn btn--orange btn--shadow" %>
           <% if @question.correct_rate >= 70 %>
-         <%= link_to "戻る", learned_tank_questions_path(@question.tank_id), class: "sub" %>
+         <%= link_to "戻る", learned_tank_questions_path(@question.tank_id), class: "btn btn--blue btn--shadow" %>
          <% else %>
-          <%= link_to "戻る", unlearned_tank_questions_path(@question.tank_id), class: "sub" %>
+          <%= link_to "戻る", unlearned_tank_questions_path(@question.tank_id), class: "btn btn--blue btn--shadow" %>
           <% end %>
       </div>
 
