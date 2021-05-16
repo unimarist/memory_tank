@@ -11,7 +11,7 @@
 
   <% @questions.each do |question|   %>
 
-   <div class=list2 >
+   <div class=list2 data-turbolinks="false">
   
      <div class="question2">
         <p class="p12">問題</p> 
@@ -37,9 +37,9 @@
      </div>
 
      <div class="p14">
-      <% if question.question == flash[:com] %>
+      <% if question.question == flash[:target] %>
       <div id="link" >
-      <%= flash[:des] %>
+      <%= flash[:result] %>
       </div>
       <% end %>
      </div>

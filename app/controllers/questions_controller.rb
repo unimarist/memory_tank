@@ -1,17 +1,18 @@
 class QuestionsController < ApplicationController
 
+  before_action :return_index
+  before_action :find_tank, except: [:destroy,:check_a,:check_b,:check_c,:check_d]
+  before_action :find_question, only: [:edit,:update,:delete_confirm]
+
   def index
-    @tank = Tank.find_by(id: params[:tank_id])
   end
 
   def new
-    @tank = Tank.find_by(id: params[:tank_id])
     @question = Question.new
   end
 
   def create
     @question = Question.new(question_params)
-    @tank = Tank.find_by(id: @question.tank_id)
     if @question.save
       redirect_to tank_questions_path(@question.tank_id)
     else
@@ -20,30 +21,14 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def learned  
-    @questions = Question.learned(params[:tank_id])
-    @tank = Tank.find_by(id: params[:tank_id])
-  end
-
-  def unlearned  
-    @questions = Question.unlearned(params[:tank_id])
-    @tank = Tank.find_by(id: params[:tank_id])
-  end
-
   def edit
-    @question = Question.find_by(id: params[:id])
-    @tank = Tank.find_by(id: params[:tank_id])
   end
 
   def update
-    @question = Question.find(params[:id])
-    @tank = Tank.find_by(id: @question.tank_id)
-    if @question.update(question_params)
-       if @question.correct_rate >= 70
-           redirect_to learned_tank_questions_path(@question.tank_id)
-       else
-           redirect_to unlearned_tank_questions_path(@question.tank_id)
-       end
+    if @question.update(question_params) && @question.correct_rate >= 70
+      redirect_to learned_tank_questions_path(@question.tank_id)
+    elsif @question.update(question_params) && @question.correct_rate < 70
+      redirect_to unlearned_tank_questions_path(@question.tank_id)
     else
       flash.now[:error_question] = "各項目は必須です。500字以内で入力して下さい。/Questionは未登録である必要があります。"
       render :edit
@@ -51,150 +36,93 @@ class QuestionsController < ApplicationController
   end
 
   def delete_confirm
-   @question = Question.find_by(id: params[:id])
-   @tank = Question.find_by(id: params[:tank_id])
   end
 
   def destroy
     question = Question.find(params[:id])
-    tank = Tank.find_by(id: params[:tank_id])
+    tank = Tank.find(params[:tank_id])
     correct_rate = question.correct_rate
     question.destroy
     if correct_rate >= 70
       redirect_to learned_tank_questions_path(tank.id)
-      else
+    else
       redirect_to unlearned_tank_questions_path(tank.id)
-      end
+    end
   end
+
+  def learned  
+   @questions = Question.learned(params[:tank_id])
+ end
+
+ def unlearned  
+   @questions = Question.unlearned(params[:tank_id])
+ end
 
   def check_a
     question = Question.find(params[:id])
-    correct_answer = question.correct_answer
-    if correct_answer == "A"
-       question.increment(:correct_count, 1)
-       sum = question.correct_count + question.uncorrect_count
-       question.correct_rate = question.correct_count * 100  / sum if sum > 0
-       question.save
-       flash[:des] = "⭕️ 正解！：" + question.description
-       flash[:com] = question.question
-       if question.correct_rate>= 70
-          redirect_to learned_tank_questions_path(question.tank_id, anchor: 'link')
-       else
-          redirect_to unlearned_tank_questions_path(question.tank_id, anchor: 'link')
-        end
-    else
-       question.increment(:uncorrect_count, 1)
-       sum = question.correct_count + question.uncorrect_count
-       question.correct_rate = question.correct_count * 100  / sum if sum > 0
-       question.save
-       flash[:des] = "❌ 不正解！：" + question.description
-       flash[:com] = question.question
-       if question.correct_rate >= 70
-          redirect_to learned_tank_questions_path(question.tank_id, anchor: 'link')
-       else
-          redirect_to unlearned_tank_questions_path(question.tank_id, anchor: 'link')
-       end
-    end
+    calc(question,"A")
   end
-
 
   def check_b
     question = Question.find(params[:id])
-    correct_answer = question.correct_answer
-    if correct_answer == "B"
-       question.increment(:correct_count, 1)
-       sum = question.correct_count + question.uncorrect_count
-       question.correct_rate = question.correct_count * 100  / sum if sum > 0
-       question.save
-       flash[:des] = "⭕️ 正解！：" + question.description
-       flash[:com] = question.question
-       if question.correct_rate >= 70
-          redirect_to learned_tank_questions_path(question.tank_id, anchor: 'link')
-       else
-          redirect_to unlearned_tank_questions_path(question.tank_id, anchor: 'link')
-        end
-    else
-       question.increment(:uncorrect_count, 1)
-       sum = question.correct_count + question.uncorrect_count
-       question.correct_rate = question.correct_count * 100  / sum if sum > 0
-       question.save
-       flash[:des] = "❌ 不正解！：" + question.description
-       flash[:com] = question.question
-       if question.correct_rate >= 70
-          redirect_to learned_tank_questions_path(question.tank_id, anchor: 'link')
-       else
-          redirect_to unlearned_tank_questions_path(question.tank_id, anchor: 'link')
-       end
-    end
+    calc(question,"B")
   end
-
 
   def check_c
     question = Question.find(params[:id])
-    correct_answer = question.correct_answer
-    if correct_answer == "C"
-       question.increment(:correct_count, 1)
-       sum = question.correct_count + question.uncorrect_count
-       question.correct_rate = question.correct_count * 100  / sum if sum > 0
-       question.save
-       flash[:des] = "⭕️ 正解！：" + question.description
-       flash[:com] = question.question
-       if question.correct_rate >= 70
-          redirect_to learned_tank_questions_path(question.tank_id, anchor: 'link')
-       else
-          redirect_to unlearned_tank_questions_path(question.tank_id, anchor: 'link')
-        end
-    else
-       question.increment(:uncorrect_count, 1)
-       sum = question.correct_count + question.uncorrect_count
-       question.correct_rate = question.correct_count * 100  / sum if sum > 0
-       question.save
-       flash[:des] = "❌ 不正解！：" + question.description
-       flash[:com] = question.question
-       if question.correct_rate >= 70
-          redirect_to learned_tank_questions_path(question.tank_id, anchor: 'link')
-       else
-          redirect_to unlearned_tank_questions_path(question.tank_id, anchor: 'link')
-       end
-    end
+    calc(question,"C")
   end
 
   def check_d
     question = Question.find(params[:id])
-    correct_answer = question.correct_answer
-    if correct_answer == "D"
-       question.increment(:correct_count, 1)
-       sum = question.correct_count + question.uncorrect_count
-       question.correct_rate = question.correct_count * 100  / sum if sum > 0
-       question.save
-       flash[:des] = "⭕️ 正解！：" + question.description
-       flash[:com] = question.question
-       if question.correct_rate >= 70
-          redirect_to learned_tank_questions_path(question.tank_id, anchor: 'link')
-       else
-          redirect_to unlearned_tank_questions_path(question.tank_id, anchor: 'link')
-        end
-    else
-       question.increment(:uncorrect_count, 1)
-       sum = question.correct_count + question.uncorrect_count
-       question.correct_rate = question.correct_count * 100  / sum if sum > 0
-       question.save
-       flash[:des] = "❌ 不正解！：" + question.description
-       flash[:com] = question.question
-       if question.correct_rate >= 70
-          redirect_to learned_tank_questions_path(question.tank_id, anchor: 'link')
-       else
-          redirect_to unlearned_tank_questions_path(question.tank_id, anchor: 'link')
-       end
+    calc(question,"D")
+  end
+
+  private
+  def return_index
+    unless user_signed_in?
+       redirect_to "/"
     end
   end
 
-
-
-  private
   def question_params
     params.require(:question).permit(:question,:answer_a,:answer_b,:answer_c,:answer_d,:correct_answer,:description,:correct_count,:uncorrect_count,:correct_rate).merge(user_id:current_user.id,tank_id:params[:tank_id])
   end
 
+  def find_tank
+    @tank = Tank.find(params[:tank_id])
+  end
+
+  def find_question
+    @question = Question.find(params[:id])
+  end
+
+  def calc(question,choice_answer)
+    if question.correct_answer == choice_answer
+        question.increment(:correct_count, 1)
+        sum = question.correct_count + question.uncorrect_count
+        question.correct_rate = question.correct_count * 100  / sum if sum > 0
+        question.save
+        flash[:result] = "⭕️ 正解！：" + question.description
+        flash[:target] = question.question
+        if question.correct_rate>= 70
+         redirect_to learned_tank_questions_path(question.tank_id, anchor: 'link')
+        else
+         redirect_to unlearned_tank_questions_path(question.tank_id, anchor: 'link')
+        end
+    else
+        question.increment(:uncorrect_count, 1)
+        sum = question.correct_count + question.uncorrect_count
+        question.correct_rate = question.correct_count * 100  / sum if sum > 0
+        question.save
+        flash[:result] = "❌ 不正解！：" + question.description
+        flash[:target] = question.question
+        if question.correct_rate >= 70
+         redirect_to learned_tank_questions_path(question.tank_id, anchor: 'link')
+        else
+         redirect_to unlearned_tank_questions_path(question.tank_id, anchor: 'link')
+        end
+    end
+  end
 
 end

@@ -14,10 +14,10 @@
 <% if user_signed_in? %>
 <div class="tank">
      <div >
-     <%= link_to image_tag("/images/tank_img.jpg", class: 'left_tank' )  , word_search_tank_path(current_user.id)  %>
+     <%= link_to image_tag("/images/tank_img.jpg", class: 'left_tank' )  , word_tank_index_tank_path(current_user.id)  %>
     </div>
     <div>
-     <%= link_to image_tag("/images/tank_img_2.jpg", class: 'right_tank' )  , question_search_tank_path(current_user.id)   %>
+     <%= link_to image_tag("/images/tank_img_2.jpg", class: 'right_tank' )  , question_tank_index_tank_path(current_user.id)   %>
     </div>
 </div>
 <% else %>
@@ -53,10 +53,10 @@
  <% if user_signed_in? %>
 <div class="tank_enter">
   <div class="word_tank_enter">
-    <%= link_to "Word Tankに進む",  word_search_tank_path(current_user.id), class: "btn btn--orange btn--shadow" %>
+    <%= link_to "Word Tankに進む",  word_tank_index_tank_path(current_user.id), class: "btn btn--orange btn--shadow" %>
   </div>
   <div class="question_tank_enter">
-    <%= link_to "Question Tankに進む", question_search_tank_path(current_user.id), class:  "btn btn--blue btn--shadow" %>
+    <%= link_to "Question Tankに進む", question_tank_index_tank_path(current_user.id), class:  "btn btn--blue btn--shadow" %>
   </div>
 </div>
 <% end %>

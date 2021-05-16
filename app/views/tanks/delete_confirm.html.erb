@@ -29,11 +29,11 @@
         </div>
 
         <div class="field">
-         <%= link_to "削除", tank_path(@tank.id), method: :delete ,class:  "btn btn--blue btn--shadow" %>
+         <%= link_to "削除", tank_path(@tank.id), method: :delete ,class:  "btn btn--orange btn--shadow" %>
          <% if @tank.tank_type == "単語" %>
-         <%= link_to "戻る", word_search_tank_path(current_user.id) , class: "sub" %>
+         <%= link_to "戻る", word_tank_index_tank_path(current_user.id) , class: "btn btn--blue btn--shadow" %>
           <% elsif @tank.tank_type == "問題" %> 
-            <%= link_to "戻る", question_search_tank_path(current_user.id) , class: "sub" %>
+            <%= link_to "戻る", question_tank_index_tank_path(current_user.id) , class: "btn btn--blue btn--shadow" %>
          <% end %>
         </div>
   </div>

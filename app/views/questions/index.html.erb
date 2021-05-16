@@ -3,7 +3,7 @@
  <p class="p3">QuestionTank：<%= @tank.tank_name %></p>
  <div class="tank_top">
      <%= link_to "Questionを登録する", new_tank_question_path(@tank.id), class: "btn btn--orange btn--shadow" %>
-     <%= link_to "戻る", question_search_tank_path(current_user.id), class:  "btn btn--blue btn--shadow" %> 
+     <%= link_to "戻る", question_tank_index_tank_path(current_user.id), class:  "btn btn--blue btn--shadow" %> 
  </div>
 
  <p class="p7">Questionを登録するとまずは「未習得Tank」に蓄積されるよ!</p>
