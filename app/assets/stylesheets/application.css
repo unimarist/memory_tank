@@ -14,13 +14,15 @@
  *= require_self
  */
 
+ /* ヘッダー */
  header{
-   background-color:aquamarine;
    height:10vh;
+   width:100vw;
    display: flex;
    justify-content: space-between;
-   width:100vw;
    position: fixed;
+   box-shadow: 0px 2px 4px gray;
+   background-color:aliceblue;
  }
 
  .header_left{
@@ -30,23 +32,36 @@
 
 .header_left_main{
   margin-right:30px;
-}
-
-a{
-  text-decoration: none;
-}
-
-.p1{
-  color:orangered;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
   font-size:30px;
   font-weight:900;
-  margin-right:10px;
 }
 
-.header_right{
+.header_left_sub{
+  padding-top:5px;
+  font-size:20px;
+  font-weight:900;
+}
+
+.title{
+  color: tomato;
+  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+}
+
+.heading{
+  color:#2f4f4f;
+  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+}
+
+.user_name{
+  padding-top:20px;
+  font-size:20px;
+  font-weight:900;
+  margin-left:500px;
+}
+
+.user_icon{
   display: flex;
-  margin:20px;
+  padding-top:15px;
 }
 
 .icon_image{
@@ -57,39 +72,41 @@ a{
   background-position: center center;
   background-size: contain;
   background-color:white;
-  margin-right:10px;
+}
+
+.user_info{
+  padding-top:35px;
+  margin-right:20px;
 }
 
 .btn{
-  margin-right:10px;
-  margin-top:10px;
-  margin-bottom:10px;
   font-family:"MS PGothic", "Osaka", Arial, sans-serif;
 }
 
 .btn--orange {
   color: #fff;
-  background-color: #eb6100;
+  background-color: tomato;
   border-bottom: 5px solid #b84c00;
   padding:10px;
+  margin-right:10px;
   
 }
 .btn--orange:hover {
   color: #fff;
-  background: #f56500;
+  background: tomato;
   border-bottom: 2px solid #b84c00;
 }
 
 .btn--blue {
   color: #fff;
-  background-color: #164ad8;
+  background-color: royalblue;
   border-bottom: 5px solid #383e4e;
   padding:10px;
 }
 
 .btn--blue:hover {
   color: #fff;
-  background: #1a4edf;
+  background: royalblue;
   border-bottom: 2px solid #383e4e;
 }
 
@@ -98,24 +115,52 @@ a{
   box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
 }
 
-
-.login_right{
-  display: flex;
-  margin-top:3px;
+.unlogin_right{
+  margin:33px;
 }
 
-.circle-image {
-      background-image:url("/images/default_user.png");
-      border: 1px solid white;
-      width:  66px;
-      height: 66px;
-      border-radius: 90%;
-      background-position: center center;
-      background-size: contain;
-      background-color:white;
-      margin-right:10px;
-      
-  }
+.default_icon_image {
+  background-image:url("/images/default_user.png");
+  border: 1px solid white;
+  width:  66px;
+  height: 66px;
+  border-radius: 90%;
+  background-position: center center;
+  background-size: contain;
+  background-color:white;
+}
+
+ /* フッター */
+
+ footer{
+  background-color: aliceblue;
+  width:100vw;
+  display: flex;
+  height:8vh;
+  box-shadow: 0px -0.5px 4px gray;
+}
+
+.footer_center{
+  display: flex;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:30px;
+}
+
+.footer_center_main{ 
+  font-size:20px;
+  font-weight:900;
+}
+
+.footer_center_sub{
+  font-size:15px;
+  margin-left:15px;
+}
+
+ /* -----------------------------------------*/
+
+
+
 
   .sp{
   color:orangered;
@@ -222,7 +267,6 @@ a{
   background-size: contain;
   min-height:92vh;
   height:auto;
-  background-size:100vw;
 
 }
 
@@ -329,3 +373,8 @@ a{
 }
 
 
+
+
+a{
+  text-decoration: none;
+}

@@ -2,23 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-//LP
+/* LP */
+
 .tank_container{
   background-color:#F4FBFE;
   text-align: center;
-  padding-top:120px;
+  padding-top:15vh;
   background-size: contain;
   min-height:92vh;
   height:auto;
-  width:100%;
-  background-size:100vw;
+  width:100vw;
 }
 
-
-.tank{
-  margin-top:5vh;
-  display: flex;
-  justify-content: space-between;
+.center_font{
+  color:#2f4f4f;
+  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  font-size:30px;
+  font-weight:900;
 }
 
 .tank_title{
@@ -29,99 +29,61 @@
 
 .left_tank_title{
   margin-left:29vw;
-  border-bottom: solid 5px red;
-  
+  border-bottom: solid 5px tomato; 
 }
 
 .right_tank_title{
-  margin-right:29vw;
-  border-bottom: solid 5px red;
+  margin-right:28vw;
+  border-bottom: solid 5px tomato;
+}
 
+.tank{
+  margin-top:5vh;
+  display: flex;
+  justify-content: space-between;
 }
 
 .tank_comment{
   margin-top:3vh;
   display: flex;
-  justify-content: space-between;
 }
 
 .memory_tank_comment{
   margin-left:15vw;
-  
-  
 }
 
 .question_tank_comment{
   margin-right:15vw;
- 
-
 }
 
-
-.tank_enter{
-  margin-top:5vh;
-  display: flex;
-  justify-content: space-between; 
-}
-
-.word_tank_enter{
-  margin-left:28vw;
-}
-
-.question_tank_enter{
-  margin-right:28vw;
-}
-
-
-
-
-
-footer{
-  background-color: #FCF1DC;
-  width:100vw;
-  display: flex;
-  justify-content: space-between;
-  height:8vh;
-}
-
-.footer_left{
-  display: flex;
-  margin:30px 150px;
-}
-
-.footer_left_main{
-  margin-right:30px;
-}
-
-
-.footer_right{
-  display: flex;
-  margin:20px;
-}
-
-
-.p3{
-  color:#333333;
+.comment{
+  color:#2f4f4f;
   font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
   font-size:30px;
   font-weight:900;
-  text-align: center;
+  margin-bottom:30px;
+  margin-left:5vw;
 }
 
-
-.p4{
-  color:	#333333;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:30px;
-  font-weight:900;
-}
-
-.p5{
-  color:	#333333;
+.comment_sub{
+  color:#2f4f4f;
   font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
   font-size:18px;
   font-weight:900;
+  text-align: left;
+  margin-left:4vw;
 }
+
+/* --------------------------------------------------- */
+
+
+
+
+
+
+
+
+
 
 .p6{
   color:#333333;
