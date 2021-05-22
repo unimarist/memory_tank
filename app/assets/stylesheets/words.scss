@@ -2,10 +2,77 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.p7{
-  color:	#333333;
+.word_top{
+  margin-right:40vw;
+  margin-left:40vw;
+}
+
+.word_top_button{
+  margin-right:47vw;
+  margin-left:47vw;
+  margin-top:3vh;
+  margin-bottom:5vh;
+}
+
+.search_top{
+  margin-right:30vw;
+  margin-left:30vw;
+  margin-bottom:30px;
+  display: flex;
+}
+
+.contents_list{
+  display:inline-block;
+  margin-left:2vw;
+}
+
+.result{
+  color:red;
   font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:22px;
+  font-size:20px;
+  font-weight:900;
+  overflow-wrap: break-word;
+}
+
+.meaning_box{
+  width:350px;
+  overflow-wrap: break-word;
+  display:flex;
+}
+
+.meaning{
+  background-color :black;
+  color:black;
+  color:black;
+  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  font-size:30px;
   font-weight:900;
   text-align: center;
+  width:230px;
+  overflow-wrap: break-word;
+}
+
+.meaning:hover {
+  background-color: aliceblue;
+}
+
+.calc{
+  color:red;
+  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  font-size:14px;
+  overflow-wrap: break-word;
+  margin-left:20px;
+  font-weight:900;
+}
+
+.word_button{
+  display: inline-flex;
+  margin-top:15px;
+  margin-bottom:50px;
+  width:380px;
+  font-size:15px;
+}
+
+.button_split{
+  margin-right:10px;
 }

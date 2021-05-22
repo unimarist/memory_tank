@@ -14,13 +14,15 @@
  *= require_self
  */
 
+ /* ヘッダー */
  header{
-   background-color:aquamarine;
    height:10vh;
+   width:100vw;
    display: flex;
    justify-content: space-between;
-   width:100vw;
    position: fixed;
+   box-shadow: 0px 2px 4px gray;
+   background-color:aliceblue;
  }
 
  .header_left{
@@ -30,23 +32,36 @@
 
 .header_left_main{
   margin-right:30px;
-}
-
-a{
-  text-decoration: none;
-}
-
-.p1{
-  color:orangered;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
   font-size:30px;
   font-weight:900;
-  margin-right:10px;
 }
 
-.header_right{
+.header_left_sub{
+  padding-top:5px;
+  font-size:20px;
+  font-weight:900;
+}
+
+.title{
+  color: tomato;
+  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+}
+
+.heading{
+  color:#2f4f4f;
+  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+}
+
+.user_name{
+  padding-top:20px;
+  font-size:20px;
+  font-weight:900;
+  margin-left:500px;
+}
+
+.user_icon{
   display: flex;
-  margin:20px;
+  padding-top:15px;
 }
 
 .icon_image{
@@ -57,40 +72,61 @@ a{
   background-position: center center;
   background-size: contain;
   background-color:white;
-  margin-right:10px;
+}
+
+.user_info{
+  padding-top:35px;
+  margin-right:20px;
 }
 
 .btn{
-  margin-right:10px;
-  margin-top:10px;
-  margin-bottom:10px;
   font-family:"MS PGothic", "Osaka", Arial, sans-serif;
+}
+
+.btn-n{
+  font-family:"MS PGothic", "Osaka", Arial, sans-serif;
+  border-style: none;
 }
 
 .btn--orange {
   color: #fff;
-  background-color: #eb6100;
+  background-color: tomato;
   border-bottom: 5px solid #b84c00;
   padding:10px;
+  margin-right:10px;
   
 }
 .btn--orange:hover {
   color: #fff;
-  background: #f56500;
+  background: tomato;
   border-bottom: 2px solid #b84c00;
 }
 
 .btn--blue {
   color: #fff;
-  background-color: #164ad8;
+  background-color: royalblue;
   border-bottom: 5px solid #383e4e;
   padding:10px;
 }
 
 .btn--blue:hover {
   color: #fff;
-  background: #1a4edf;
+  background: royalblue;
   border-bottom: 2px solid #383e4e;
+}
+
+.btn--gray {
+  color: #fff;
+  background-color: darkgray;
+  border-bottom: 5px solid gray;
+  padding:10px;
+  margin-right:10px;
+  
+}
+.btn--gray:hover {
+  color: #fff;
+  background-color: darkgray;
+  border-bottom: 2px solid gray;
 }
 
 .btn--shadow {
@@ -98,234 +134,115 @@ a{
   box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
 }
 
-
-.login_right{
-  display: flex;
-  margin-top:3px;
+.unlogin_right{
+  margin:33px;
 }
 
-.circle-image {
-      background-image:url("/images/default_user.png");
-      border: 1px solid white;
-      width:  66px;
-      height: 66px;
-      border-radius: 90%;
-      background-position: center center;
-      background-size: contain;
-      background-color:white;
-      margin-right:10px;
-      
-  }
+.default_icon_image {
+  background-image:url("/images/default_user.png");
+  border: 1px solid white;
+  width:  66px;
+  height: 66px;
+  border-radius: 90%;
+  background-position: center center;
+  background-size: contain;
+  background-color:white;
+}
 
-  .sp{
-  color:orangered;
+ /* フッター */
+
+ footer{
+  background-color: aliceblue;
+  width:100vw;
+  display: flex;
+  height:8vh;
+  box-shadow: 0px -0.5px 4px gray;
+}
+
+.footer_center{
+  display: flex;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:30px;
+}
+
+.footer_center_main{ 
+  font-size:20px;
+  font-weight:900;
+}
+
+.footer_center_sub{
+  font-size:15px;
+  margin-left:15px;
+}
+
+ /* 共通部品 */
+
+ .icon{
+  border: 2px solid white;
+  width:  250px;
+  height: 250px;
+  border-radius: 90%;
+  background-position: center center;
+  background-size: contain;
+  background-color:white;
+}
+
+.center{
+  color:#2f4f4f;
   font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
   font-size:30px;
   font-weight:900;
-  margin:30px;
-  }
+  margin-right:43vw;
+  margin-left:43vw;
+}
 
-  .tank_icon{
-    border: 2px solid white;
-    width:  250px;
-    height: 250px;
-    border-radius: 90%;
-    background-position: center center;
-    background-size: contain;
-    background-color:white;
-  }
+.center2{
+  color:#2f4f4f;
+  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  font-size:30px;
+  font-weight:900;
+  margin-right:42vw;
+  margin-left:42vw;
+}
 
-  .left_tank{
-    border: 2px solid white;
-    width:  300px;
-    height: 300px;
-    border-radius: 90%;
-    background-position: center center;
-    background-size: contain;
-    background-color:white;
-    margin-left:25vw;
-  }
-  
-  .right_tank{
-    border: 2px solid white;
-    width:  300px;
-    height: 300px;
-    border-radius: 90%;
-    background-position: center center;
-    background-size: contain;
-    background-color:white;
-    margin-right:25vw;
-  
-  }
+.center3{
+  color:#2f4f4f;
+  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  font-size:22px;
+  font-weight:900;
+  text-align: center;
+}
 
-  .word_top{
-    margin-right:40vw;
-    margin-left:40vw;
+.left_tank{
+  border: 2px solid #EEEEEE	;
+  width:  250px;
+  height: 250px;
+  border-radius: 90%;
+  background-position: center center;
+  background-size: contain;
+  margin-left:25vw;
+}
 
-  }
+.right_tank{
+  border: 2px solid #EEEEEE	;
+  width:  250px;
+  height: 250px;
+  border-radius: 90%;
+  background-position: center center;
+  background-size: contain;
+  margin-right:25vw;
+}
 
-  .word_top_button{
-    margin-right:47vw;
-    margin-left:47vw;
-    margin-top:3vh;
-    margin-bottom:5vh;
-  }
+.tomato{
+  color:tomato;
+  font-weight:900;
+}
 
-  .p9{
-    background-color :black;
-    color:black;
-    color:black;
-    font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-    font-size:30px;
-    font-weight:900;
-    text-align: center;
-    width:250px;
-    overflow-wrap: break-word;
-  }
-
-  .p9:hover {
-    background-color: white; 
-  }
-
-
-
+a{
+  text-decoration: none;
+}
 
 * {
   box-sizing: border-box;
 }
-
-
-.word_button{
-  display: inline-flex;
-  margin-bottom:50px;
-  width:380px;
-  font-size:15px;
-}
-
-.p10{
-  color:	#333333;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:28px;
-  font-weight:900;
-}
-
-.text_area{
-  margin-top: 5px;
-  font-family:"MS PGothic", "Osaka", Arial, sans-serif;
-  width:600px;
-  height:80px;
-}
-
-.question_container{
-  background-color:#F4FBFE;
-  padding-top:120px;
-  background-size: contain;
-  min-height:92vh;
-  height:auto;
-  background-size:100vw;
-
-}
-
-.container_2{
-  text-align: center;
-}
-
-.question{
-  width:80vw;
-  overflow-wrap: break-word;
-  margin-left:8vw;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  padding-top:20px;
-}
-
-.question2{
-  width:80vw;
-  overflow-wrap: break-word;
-  margin-left:8vw;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  padding-top:20px;
-  display:flex;
-}
-
-.p11{
-  color:#333333;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:30px;
-  font-weight:900;
-  
-
-}
-
-
-.p12{
-  color:black;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:30px;
-  font-weight:900;
-  overflow-wrap: break-word;
-  margin-top:15px;
-}
-
-.p13{
-  color:red;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:30px;
-  font-weight:900;
-  overflow-wrap: break-word;
-  margin-left:15px;
-}
-
-.question_button{
-  display: inline-flex;
-  margin-top:15px;
-  margin-bottom:50px;
-  margin-left:8vw;
-  font-size:15px;
-}
-
-
-.p14{
-  color:red;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:30px;
-  font-weight:900;
-  overflow-wrap: break-word;
-  width:80vw;
-  margin-left:130px;
-  margin-top:10px;
-}
-
-.p15{
-  color:red;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:30px;
-  font-weight:900;
-  overflow-wrap: break-word;
-}
-
-.p16{
-  color:red;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:15px;
-  overflow-wrap: break-word;
-  margin-left:50px;
-}
-
-.p17{
-  color:red;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:15px;
-  overflow-wrap: break-word;
-  margin-left:30px;
-  margin-top:25px;
-}
-
-.search_top{
-    margin-right:30vw;
-    margin-left:30vw;
-    margin-bottom:50px;
-    display: flex;
-    height:70px;
-}
-
-

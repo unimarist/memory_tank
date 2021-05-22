@@ -1,45 +1,30 @@
 <div class="tank_container2">
  
- <p class="p3">QuestionTank一覧</p><br>
- <div class="tank_top">
-     <%= link_to "Tankを作成する", tank_path("問題"), class: "btn btn--orange btn--shadow" %>
-     <%= link_to "戻る", root_path, class:  "btn btn--blue btn--shadow" %>
+   <p class="center2">QuestionTank一覧</p><br>
+   <div class="tank_top">
+       <%= link_to "Tankを作成する", tank_path("問題"), class: "btn btn--orange btn--shadow" %>
+       <%= link_to "戻る", root_path, class:  "btn btn--blue btn--shadow" %>
+   </div>
 
-  </div>
+   <% @tanks.each do |question_tank|   %>
 
- <% @tanks.each do |question_tank|   %>
-
-   <div class=list>
-      <div class="tank_name">
-         <p class="p6"><%= question_tank.tank_name %></p>
+     <div class=list>
+       <div class="tank_name">
+         <p ><%= question_tank.tank_name %></p>
+       </div>
+       <% if question_tank.tank_icon.attached?  %>
+         <div>
+           <%= link_to image_tag(question_tank.tank_icon, class: 'icon' )  , tank_questions_path(question_tank.id)  %>
+         </div>
+       <% else %>
+         <div>
+           <%= link_to image_tag("/images/tank_img_2.jpg", class: 'icon' )  , tank_questions_path(question_tank.id)   %>    
+         </div>
+       <% end %>  
+       <div class="tank_button">
+           <%= link_to "編集", edit_tank_path(question_tank.id), class: "btn btn--orange btn--shadow" %>
+           <%= link_to "削除",delete_confirm_tank_path(question_tank.id) ,class:  "btn btn--blue btn--shadow" %>
+       </div>
      </div>
-      
-     <% if question_tank.tank_icon.attached?  %>
-        <div>
-          <%= link_to image_tag(question_tank.tank_icon, class: 'tank_icon' )  , tank_questions_path(question_tank.id)  %>
-        </div>
-      <% else %>
-      <div>
-          <%= link_to image_tag("/images/tank_img_2.jpg", class: 'tank_icon' )  , tank_questions_path(question_tank.id)   %>    
-      </div>
-      <% end %>  
-
-      <div class="tank_button">
-         <%= link_to "編集", edit_tank_path(question_tank.id), class: "btn btn--orange btn--shadow" %>
-         <%= link_to "削除",delete_confirm_tank_path(question_tank.id) ,class:  "btn btn--blue btn--shadow" %>
-      </div>
-    </div>
-
-  <% end %>
+   <% end %>
 </div>
-
-<footer>
-     <div class="footer_left">
-        <div class="footer_left_main">
-           <a href="/"><p class="p2">MemoryTank</p></a>
-        </div>
-        <div class="fotter_left_sub">
-           <p class="p2">〜効率的なナレッジ蓄積と知識定着を支援〜</p>
-        </div>
-     </div>
-</footer>

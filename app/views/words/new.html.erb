@@ -1,9 +1,7 @@
-<div class="contents row">
   <div class="container">
-    
-    <p class="p1">Wordの登録 : <%= @tank.tank_name %> </p>
+     <p class="center_font">Wordの登録 : <%= @tank.tank_name %> </p>
 
-    <%= flash[:error_word] %> 
+     <%= flash[:error_word] %> 
 
      <%= form_with(model: [@tank,@word],local: true ) do |form| %>
 
@@ -29,23 +27,8 @@
       </div>
 
       <div class="field">
-         <%= form.submit "登録する" ,class: "btn btn--orange btn--shadow" %>
+         <%= form.submit "登録する" ,class: "btn-n btn--orange btn--shadow" %>
          <%= link_to "戻る", tank_words_path(@tank.id) , class: "btn btn--blue btn--shadow" %>
       </div>
     <% end %>
-
-
   </div>
-
-
-  <footer>
-     <div class="footer_left">
-        <div class="footer_left_main">
-           <a href="/"><p class="p2">MemoryTank</p></a>
-        </div>
-        <div class="fotter_left_sub">
-           <p class="p2">〜効率的なナレッジ蓄積と知識定着を支援〜</p>
-        </div>
-     </div>
-    </footer>
-</div>

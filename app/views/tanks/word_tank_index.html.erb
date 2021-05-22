@@ -1,45 +1,31 @@
 <div class="tank_container2">
  
- <p class="p3">WordTank一覧</p><br>
- <div class="tank_top">
+  <p class="center">WordTank一覧</p><br>
+  <div class="tank_top">
      <%= link_to "Tankを作成する", tank_path("単語"), class: "btn btn--orange btn--shadow" %>
      <%= link_to "戻る", root_path, class:  "btn btn--blue btn--shadow" %>
-
   </div>
 
- <% @tanks.each do |word_tank|   %>
+  <% @tanks.each do |word_tank|   %>
 
    <div class=list>
-      <div class="tank_name">
-         <p class="p6"><%= word_tank.tank_name %></p>
+     <div class="tank_name">
+         <p><%= word_tank.tank_name %></p>
      </div>
-      
      <% if word_tank.tank_icon.attached?  %>
         <div>
-            <%= link_to image_tag(word_tank.tank_icon, class: 'tank_icon') ,tank_words_path(word_tank.id)  %>
+            <%= link_to image_tag(word_tank.tank_icon, class: 'icon') ,tank_words_path(word_tank.id)  %>
         </div>
-      <% else %>
-      <div>    
-            <%= link_to image_tag("/images/tank_img.jpg", class: 'tank_icon' )  , tank_words_path(word_tank.id)   %>
-      </div>
-      <% end %>  
+     <% else %>
+        <div>    
+            <%= link_to image_tag("/images/tank_img.jpg", class: 'icon' )  , tank_words_path(word_tank.id)   %>
+        </div>
+     <% end %>  
 
-      <div class="tank_button">
+     <div class="tank_button">
          <%= link_to "編集", edit_tank_path(word_tank.id), class: "btn btn--orange btn--shadow" %>
          <%= link_to "削除",delete_confirm_tank_path(word_tank.id) ,class:  "btn btn--blue btn--shadow" %>
       </div>
-    </div>
-
+   </div>
   <% end %>
 </div>
-
-<footer>
-     <div class="footer_left">
-        <div class="footer_left_main">
-           <a href="/"><p class="p2">MemoryTank</p></a>
-        </div>
-        <div class="fotter_left_sub">
-           <p class="p2">〜効率的なナレッジ蓄積と知識定着を支援〜</p>
-        </div>
-     </div>
-</footer>

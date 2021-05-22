@@ -1,76 +1,59 @@
 <div class="tank_container">
   
-<p class="p3">2種類のTankで効率的にナレッジ蓄積/知識定着をしよう！</p>
+  <p class="center_font">2種類のTankで効率的にナレッジ蓄積・知識定着をしよう！</p>
 
-<div class="tank_title">
-    <div class="left_tank_title">
-    <p class="p3">Word Tank</p> 
-    </div>
-    <div class="right_tank_title">
-     <p class="p3">Question Tank</p> 
-    </div>
-</div>
-
-<% if user_signed_in? %>
-<div class="tank">
-     <div >
-     <%= link_to image_tag("/images/tank_img.jpg", class: 'left_tank' )  , word_tank_index_tank_path(current_user.id)  %>
-    </div>
-    <div>
-     <%= link_to image_tag("/images/tank_img_2.jpg", class: 'right_tank' )  , question_tank_index_tank_path(current_user.id)   %>
-    </div>
-</div>
-<% else %>
-<div class="tank">
-     <div >
-     <%= link_to image_tag("/images/tank_img.jpg", class: 'left_tank' )  , '/'%>
-    </div>
-    <div>
-     <%= link_to image_tag("/images/tank_img_2.jpg", class: 'right_tank' )  , '/'  %>
-    </div>
-</div>
-<% end %>
-
-<div class="tank_comment">
-    <div class="memory_tank_comment">
-    <p class="p4">覚えたい単語を蓄積していこう！</p> 
-     <ul class="p5">
-    <li type="disc">単語をカテゴリ別のTankに分けて蓄積可能</li> 
-    <li type="disc">単語を自らの暗記度に応じて、習得済Tankと未習得Tankに振り分け</li>
-    <li type="disc">単語を覚えて、未習得Tankから習得済Tankに移していこう！</li>
-    </ul> 
-    </div>
-    <div class="question_tank_comment">
-     <p class="p4">自作の問題を蓄積していこう！</p> 
-      <ul class="p5">
-    <li type="disc">自作の四択問題をカテゴリ別のTankに蓄積可能</li> 
-    <li type="disc">問題を自らの正答率に応じて、習得済Tankと未習得Tankに振り分け</li>
-    <li type="disc">問題に正解し、未習得Tankから習得済Tankに移していこう！</li>
-    </ul> 
-    </div>
-</div>
-
- <% if user_signed_in? %>
-<div class="tank_enter">
-  <div class="word_tank_enter">
-    <%= link_to "Word Tankに進む",  word_tank_index_tank_path(current_user.id), class: "btn btn--orange btn--shadow" %>
+  <div class="tank_title">
+     <div class="left_tank_title">
+       <p class="center_font">Word Tank</p> 
+     </div>
+     <div class="right_tank_title">
+       <p class="center_font">Question Tank</p> 
+     </div>
   </div>
-  <div class="question_tank_enter">
-    <%= link_to "Question Tankに進む", question_tank_index_tank_path(current_user.id), class:  "btn btn--blue btn--shadow" %>
-  </div>
-</div>
-<% end %>
-
-
-</div>
-<footer>
-     <div class="footer_left">
-        <div class="footer_left_main">
-           <a href="/"><p class="p2">MemoryTank</p></a>
+  <% if user_signed_in? %>
+     <div class="tank">
+       <div >
+         <%= link_to image_tag("/images/tank_img.jpg", class: 'left_tank' )  , word_tank_index_tank_path(current_user.id)  %>
+       </div>
+       <div>
+         <%= link_to image_tag("/images/tank_img_2.jpg", class: 'right_tank' )  , question_tank_index_tank_path(current_user.id)   %>
+       </div>
+     </div>
+  <% else %>
+     <div class="tank">
+        <div >
+         <%= link_to image_tag("/images/tank_img.jpg", class: 'left_tank' )  , '/'%>
         </div>
-        <div class="fotter_left_sub">
-           <p class="p2">〜効率的なナレッジ蓄積と知識定着を支援〜</p>
+        <div>
+         <%= link_to image_tag("/images/tank_img_2.jpg", class: 'right_tank' )  , '/'  %>
         </div>
      </div>
-    </footer>
+  <% end %>
 
+  <div class="tank_comment">
+    <div class="memory_tank_comment">
+       <p class="comment">覚えたい単語を蓄積していこう！</p> 
+        <ul class="comment_sub">
+        <% if user_signed_in? %>
+         <li type="disc" class="title">アイコンをクリックして始めよう▲</li>
+        <% end %>
+         <li type="disc">単語をカテゴリ別のTankに分けて蓄積可能</li> 
+         <li type="disc">単語を正答率に応じて、習得済Tankと未習得Tankに振り分け</li>
+         <li type="disc">単語を覚えて、未習得Tankから習得済Tankに移していこう！</li>
+        </ul> 
+    </div>
+
+    <div class="question_tank_comment">
+       <p class="comment">自作の問題を蓄積していこう！</p> 
+        <ul class="comment_sub">
+        <% if user_signed_in? %>
+         <li type="disc" class="title">アイコンをクリックして始めよう▲</li>
+        <% end %>
+         <li type="disc">自作の四択問題をカテゴリ別のTankに蓄積可能</li> 
+         <li type="disc">問題を正答率に応じて、習得済Tankと未習得Tankに振り分け</li>
+         <li type="disc">問題に正解し、未習得Tankから習得済Tankに移していこう！</li>
+        </ul> 
+    </div> 
+ </div>
+
+</div>

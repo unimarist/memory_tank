@@ -1,39 +1,25 @@
 <div class="contents row">
   <div class="container">
-    <p class="p1">アカウント登録</p>
-    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-      <%= devise_error_messages! %>
-
-      <div class="field">
-        <%= f.label :username %> (最大15文字まで)<br />
-        <%= f.text_field :username, autofocus: true, maxlength: "15" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password %>
-          (最低<%= @minimum_password_length %> 文字以上)<br />
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
-      </div>
-
-      <div class="actions">
-        <%= f.submit "登録する", class: "btn btn--orange btn--shadow" %>
-         <%= link_to "戻る", "/", class:  "btn btn--blue btn--shadow" %> 
-      </div>
-    <% end %>
+    <p class="center_font">アカウント登録</p>
+       <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+       <%= devise_error_messages! %>
+        <div class="field">
+          <%= f.label :"ユーザ名" %> (最大15文字まで)<br />
+          <%= f.text_field :username, autofocus: true, maxlength: "15" %>
+        </div>
+        <div class="field">
+          <%= f.label :"パスワード" %>
+            (最低<%= @minimum_password_length %> 文字以上)<br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+        <div class="field">
+          <%= f.label :"パスワード(確認)" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+        <div class="field">
+          <%= f.submit "登録する", class: "btn-n btn--orange btn--shadow" %>
+          <%= link_to "戻る", "/", class:  "btn btn--blue btn--shadow" %> 
+        </div>
+       <% end %>
   </div>
-  <footer>
-     <div class="footer_left">
-        <div class="footer_left_main">
-           <a href="/"><p class="p2">MemoryTank</p></a>
-        </div>
-        <div class="fotter_left_sub">
-           <p class="p2">〜効率的なナレッジ蓄積と知識定着を支援〜</p>
-        </div>
-     </div>
-    </footer>
 </div>
