@@ -1,59 +1,52 @@
-<div class="tank_container2">
+<div class="tank_container_up">
 
- <div class="word_top">
-     <p class="p3">習得済Question : <%= @tank.tank_name %> </p>
-  </div>
-
- <div class="word_top_button">
+   <div class="word_top">  
+      <p class="center_font">習得済Question : <%= @tank.tank_name %> </p>
+   </div>
+   <div class="word_top_button">
       <%= link_to "戻る", tank_questions_path(@tank.id), class:  "btn btn--blue btn--shadow" %>
- </div>
+   </div>
 
+   <p class="center3">各Questionの右側には、自分の正答率と累積の正解数が表示！</p><br><br>
 
   <% @questions.each do |question|   %>
 
-   <div class=list2 data-turbolinks="false">
+   <div class=contents_list data-turbolinks="false">
   
-     <div class="question2">
-        <p class="p12">問題</p> 
-        <p class="p17">My正答率：<%= question.correct_rate %>%(<%= question.correct_count + question.uncorrect_count %>回中<%= question.correct_count %>回正解)</p>
+     <div class="question_box">
+        <p class="question">問題</p> 
+        <p class="question_calc"><%= question.correct_rate %>%<br><%= question.correct_count + question.uncorrect_count %>回中<%= question.correct_count %>回</p>
      </div>
 
-      <div class="question">
-     <%=simple_format(question.question,class: "p11") %>
+      <div class="question_contents">
+     <%=simple_format(question.question,class: "question_line") %>
      </div>
      
-      
-      <div class="question" >
-      <%= link_to "(A)", check_a_tank_question_path(@tank.id,question.id), class: "btn btn--orange btn--shadow" %><%=simple_format(question.answer_a,class: "p12") %>
+      <div class="question_contents" >
+      <%= link_to "A", check_a_tank_question_path(@tank.id,question.id), class: "btn btn--gray btn--shadow" %><%=simple_format(question.answer_a,class: "question") %>
      </div>
-      <div class="question" >
-       <%= link_to "(B)", check_b_tank_question_path(@tank.id,question.id), class: "btn btn--blue btn--shadow" %><%=simple_format(question.answer_b,class: "p12") %>
+      <div class="question_contents" >
+       <%= link_to "B", check_b_tank_question_path(@tank.id,question.id), class: "btn btn--gray btn--shadow" %><%=simple_format(question.answer_b,class: "question") %>
      </div>
-      <div class="question" >
-       <%= link_to "(C)", check_c_tank_question_path(@tank.id,question.id), class: "btn btn--orange btn--shadow" %><%=simple_format(question.answer_c,class: "p12") %>
+      <div class="question_contents" >
+       <%= link_to "C", check_c_tank_question_path(@tank.id,question.id), class: "btn btn--gray btn--shadow" %><%=simple_format(question.answer_c,class: "question") %>
      </div>
-      <div class="question" >
-       <%= link_to "(D)", check_d_tank_question_path(@tank.id,question.id), class: "btn btn--blue btn--shadow" %><%=simple_format(question.answer_d,class: "p12") %>
-     </div>
-
-     <div class="p14">
-      <% if question.question == flash[:target] %>
-      <div id="link" >
-      <%= flash[:result] %>
-      </div>
-      <% end %>
+      <div class="question_contents" >
+       <%= link_to "D", check_d_tank_question_path(@tank.id,question.id), class: "btn btn--gray btn--shadow" %><%=simple_format(question.answer_d,class: "question") %>
      </div>
 
-
-    
+     <div class="question_result">
+        <% if question.question == flash[:target] %>
+          <div id="link" >
+            <%= flash[:result] %>
+          </div>
+        <% end %>
+     </div>
 
       <div class="question_button">
-         <%= link_to "編集", edit_tank_question_path(@tank.id,question.id), class: "btn btn--orange btn--shadow" %>
+          <%= link_to "編集", edit_tank_question_path(@tank.id,question.id), class: "btn btn--orange btn--shadow" %>
           <%= link_to "削除", delete_confirm_tank_question_path(@tank.id,question.id),class:  "btn btn--blue btn--shadow" %>
       </div>
     </div>
-
   <% end %>
-
 </div>
-

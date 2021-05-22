@@ -1,50 +1,45 @@
-<div class="contents row">
   <div class="container">
-   <% if @tank.tank_type == "単語" %>
-    <p class="p1">WordTankの編集</p>
-   <% elsif @tank.tank_type == "問題" %> 
-    <p class="p1">QuestionTankの編集</p>
-  <% end %>
-
-   <%= flash[:error_tank] %>
-
-   <%=form_with model: @tank, local: true do |form| %>
-
-      <div class="field">
-        <%= form.label :tank_name ,"Tank名 (必須：30文字以内)"  %><br />
-        <%= form.text_field :tank_name %>
-      </div>
-
-        <div class="field">
-        <p>現在のTankアイコン</p><br />
-          <% if @tank.tank_icon.attached?  %>
-        <div>
-            <%= image_tag(@tank.tank_icon, class: 'tank_icon') %>
-        </div>
-      <% elsif @tank.tank_type == "単語" %>
-      <div>    
-            <%= image_tag("/images/tank_img.jpg", class: 'tank_icon' )  %>
-      </div>
-      <% else %>  
-       <div>    
-            <%= image_tag("/images/tank_img_2.jpg", class: 'tank_icon' )  %>
-      </div>
+      <% if @tank.tank_type == "単語" %>
+        <p class="center_font">WordTankの編集</p>
+      <% elsif @tank.tank_type == "問題" %> 
+        <p class="center_font">QuestionTankの編集</p>
       <% end %>
-        <%= form.label :tank_icon ,"Tankアイコンを変更する場合は選択" %><br />
-        <%= form.file_field :tank_icon %>
-        </div>
 
-        <div class="field">
-         <%= form.submit "編集する" ,class: "btn btn--orange btn--shadow" %>
-         <% if @tank.tank_type == "単語" %>
-         <%= link_to "戻る", word_tank_index_tank_path(current_user.id) , class: "btn btn--blue btn--shadow" %>
-          <% elsif @tank.tank_type == "問題" %> 
-            <%= link_to "戻る", question_tank_index_tank_path(current_user.id) , class: "btn btn--blue btn--shadow" %>
-         <% end %>
-        </div>
-         <% end %>
+      <%= flash[:error_tank] %>
+
+      <%=form_with model: @tank, local: true do |form| %>
+
+         <div class="field">
+            <%= form.label :tank_name ,"Tank名 (必須：30文字以内)"  %><br />
+            <%= form.text_field :tank_name %>
+         </div>
+         <div class="field">
+            <p>現在のTankアイコン</p><br />
+            <% if @tank.tank_icon.attached?  %>
+               <div>
+                 <%= image_tag(@tank.tank_icon, class: 'icon') %>
+               </div>
+            <% elsif @tank.tank_type == "単語" %>
+               <div>    
+                 <%= image_tag("/images/tank_img.jpg", class: 'icon' )  %>
+               </div>
+            <% else %>  
+                <div>    
+                  <%= image_tag("/images/tank_img_2.jpg", class: 'icon' )  %>
+                </div>
+            <% end %>
+          </div>
+          <div class="field">
+              <%= form.label :tank_icon ,"Tankアイコンを変更する場合は画像ファイルを選択して下さい▼" %><br/><br>
+              <%= form.file_field :tank_icon %>
+          </div>
+          <div class="field">
+              <%= form.submit "編集する" ,class: "btn-n btn--orange btn--shadow" %>
+              <% if @tank.tank_type == "単語" %>
+                <%= link_to "戻る", word_tank_index_tank_path(current_user.id) , class: "btn btn--blue btn--shadow" %>
+              <% elsif @tank.tank_type == "問題" %> 
+                <%= link_to "戻る", question_tank_index_tank_path(current_user.id) , class: "btn btn--blue btn--shadow" %>
+              <% end %>
+          </div>
+       <% end %>
   </div>
-
-
-  
-</div>

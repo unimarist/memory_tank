@@ -1,46 +1,40 @@
-<div class="contents row">
-  <div class="container">
-
-   <% if @tank_type == "単語" %>
-    <p class="p1">WordTankの作成</p>
-   <% elsif @tank_type =="問題" %>
-   <p class="p1">QuestionTankの作成</p>
-   <% end %>
+<div class="container">
+    <% if @tank_type == "単語" %>
+       <p class="center_font">WordTankの作成</p>
+    <% elsif @tank_type =="問題" %>
+       <p class="center_font">QuestionTankの作成</p>
+    <% end %>
 
     <%= flash[:error_tank] %>
 
-     <%=form_with model: @tank, local: true do |form| %>
-      <div class="field">
-        <%= form.label :tank_name ,"Tank名 (必須：30文字以内)" %><br />
-        <%= form.text_field :tank_name %>
-      </div>
+    <%=form_with model: @tank, local: true do |form| %>
+       <div class="field">
+          <%= form.label :tank_name ,"Tank名 (必須：30文字以内)" %><br />
+          <%= form.text_field :tank_name %>
+       </div>
        
-      <% if @tank_type == "単語" %>
-       <div class="field">
-        <%= form.hidden_field :tank_type, value: "単語" %>
-      </div>
+       <% if @tank_type == "単語" %>
+          <div class="field">
+            <%= form.hidden_field :tank_type, value: "単語" %>
+          </div>
        <% elsif @tank_type =="問題" %>
-       <div class="field">
-        <%= form.hidden_field :tank_type, value: "問題" %>
-      </div>
+          <div class="field">
+            <%= form.hidden_field :tank_type, value: "問題" %>
+          </div>
        <% end %>
 
-        <div class="field">
-        <%= form.label :tank_icon ,"Tankアイコン" %><br />
-        <%= form.file_field :tank_icon %>
-        </div>
+       <div class="field">
+          <%= form.label :tank_icon ,"Tankアイコン" %><br/><br>
+          <%= form.file_field :tank_icon %>
+       </div>
 
-        <div class="field">
-         <%= form.submit "作成する" ,class: "btn btn--orange btn--shadow" %>
-         <% if @tank_type == "単語" %>
-         <%= link_to "戻る", word_tank_index_tank_path(current_user.id) , class: "btn btn--blue btn--shadow" %>
-         <% elsif @tank_type =="問題" %>
-            <%= link_to "戻る", question_tank_index_tank_path(current_user.id) , class: "btn btn--blue btn--shadow" %>
-         <% end %>
-        </div>
-     <% end %>
-  </div>
-
-
- 
+       <div class="field">
+         <%= form.submit "作成する" ,class: "btn-n btn--orange btn--shadow" %>
+           <% if @tank_type == "単語" %>
+             <%= link_to "戻る", word_tank_index_tank_path(current_user.id) , class: "btn btn--blue btn--shadow" %>
+           <% elsif @tank_type =="問題" %>
+             <%= link_to "戻る", question_tank_index_tank_path(current_user.id) , class: "btn btn--blue btn--shadow" %>
+           <% end %>
+       </div>
+    <% end %>
 </div>

@@ -1,39 +1,38 @@
-<div class="tank_container2">
- 
-  <p class="p3">WordTank：<%= @tank.tank_name %></p>
-  <div class="tank_top">
-     <%= link_to "Wordを登録する", new_tank_word_path(@tank.id), class: "btn btn--orange btn--shadow" %>
-     <%= link_to "戻る", word_tank_index_tank_path(current_user.id), class:  "btn btn--blue btn--shadow" %> 
-  </div>
-
-   <p class="p7">Wordを登録するとまずは「未習得Tank」に蓄積されるよ！</p>
-   <p class="p7">Wordの意味を覚えて、「習得済Tank」に移動させよう！</p>
+<div class="container">
+   <div class="word_top">
+     <p class="center_font">WordTank：<%= @tank.tank_name %><br><br>
+   </div>
+    <div class="tank_top">
+      <%= link_to "Wordを登録する", new_tank_word_path(@tank.id), class: "btn btn--orange btn--shadow" %>
+      <%= link_to "戻る", word_tank_index_tank_path(current_user.id), class:  "btn btn--blue btn--shadow" %> 
+    </div><br>
+   <p class="center3">Wordを登録するとまずは「未習得Tank」に蓄積されるよ！</p>
+   <p class="center3">Wordの意味を覚えて、「習得済Tank」に移動させよう！</p>
 
   <div class="tank_title">
      <div class="left_tank_title">
-       <p class="p3">習得済Tank</p> 
+       <p class="center_font">習得済Tank</p> 
      </div>
      <div class="right_tank_title">
-       <p class="p3">未習得Tank</p> 
+       <p class="center_font">未習得Tank</p> 
      </div>
   </div>
 
   <div class="tank">
      <div >
-       <%= link_to image_tag("/images/tank_img.jpg", class: 'left_tank' )  , learned_tank_words_path(@tank.id)   %>
+       <%= link_to image_tag("/images/up.jpg", class: 'left_tank' )  , learned_tank_words_path(@tank.id)   %>
      </div>
      <div>
-       <%= link_to image_tag("/images/tank_img_2.jpg", class: 'right_tank' )  , unlearned_tank_words_path(@tank.id)   %>
+       <%= link_to image_tag("/images/down.jpg", class: 'right_tank' )  , unlearned_tank_words_path(@tank.id)   %>
      </div>
   </div>
 
   <div class="tank_comment">
       <div class="memory_tank_comment">
-        <p class="p4">自分の正答率が70%以上のWordが蓄積</p> 
+        <p class="comment">自分の正答率が<span class="tomato">70%</span>以上のWordが蓄積</p> 
       </div>
       <div class="question_tank_comment">
-        <p class="p4">自分の正答率が70%未満のWordが蓄積</p> 
+        <p class="comment">自分の正答率が<span class="tomato">70%</span>未満のWordが蓄積</p> 
       </div>
   </div>
 </div>
-

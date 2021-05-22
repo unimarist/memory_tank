@@ -1,10 +1,8 @@
-<div class="contents row">
   <div class="container">
 
-    <p class="p1">Wordの編集 : <%= @tank.tank_name %></p>
+    <p class="center_font">Wordの編集 : <%= @tank.tank_name %></p>
 
     <%= flash[:error_word] %> 
-
 
      <%= form_with(model: [@tank,@word],local: true ) do |form| %>
 
@@ -16,10 +14,8 @@
         <%= form.label :meaning ,"意味 (必須：120文字以内)" %><br />
         <%= form.text_field :meaning %>
       </div>
-
-    
       <div class="field">
-         <%= form.submit "編集する" ,class: "btn btn--orange btn--shadow" %>
+         <%= form.submit "編集する" ,class: "btn-n btn--orange btn--shadow" %>
          <% if @word.correct_rate >= 70 %>
          <%= link_to "戻る", learned_tank_words_path(@word.tank_id), class: "btn btn--blue btn--shadow" %>
          <% else %>
@@ -27,10 +23,4 @@
           <% end %>
       </div>
     <% end %>
-
-
   </div>
-
-
-
-</div>

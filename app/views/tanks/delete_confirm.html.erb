@@ -1,43 +1,36 @@
-<div class="contents row">
   <div class="container">
-   <% if @tank.tank_type == "単語" %>
-    <p class="p1">WordTankを削除しますか？</p>
-   <% elsif @tank.tank_type == "問題" %> 
-    <p class="p1">QuestionTankを削除しますか？</p>
-  <% end %>
+      <% if @tank.tank_type == "単語" %>
+        <p class="center_font">WordTankを削除しますか？</p>
+      <% elsif @tank.tank_type == "問題" %> 
+        <p class="center_font">QuestionTankを削除しますか？</p>
+      <% end %>
 
       <div class="field">
         <p>Tank名</p><br />
         <%= @tank.tank_name %>
       </div>
-
-        <div class="field">
+      <div class="field">
         <p>Tankアイコン</p><br />
           <% if @tank.tank_icon.attached?  %>
-        <div>
-            <%= image_tag(@tank.tank_icon, class: 'tank_icon') %>
-        </div>
-      <% elsif @tank.tank_type == "単語" %>
-      <div>    
-            <%= image_tag("/images/tank_img.jpg", class: 'tank_icon' )  %>
+            <div>
+              <%= image_tag(@tank.tank_icon, class: 'icon') %>
+            </div>
+          <% elsif @tank.tank_type == "単語" %>
+            <div>    
+              <%= image_tag("/images/tank_img.jpg", class: 'icon' )  %>
+            </div>
+          <% else %>  
+            <div>    
+              <%= image_tag("/images/tank_img_2.jpg", class: 'icon' )  %>
+           </div>
+          <% end %>
       </div>
-      <% else %>  
-       <div>    
-            <%= image_tag("/images/tank_img_2.jpg", class: 'tank_icon' )  %>
+      <div class="field">
+         <%= link_to "削除する", tank_path(@tank.id), method: :delete ,class:  "btn-n btn--orange btn--shadow" %>
+           <% if @tank.tank_type == "単語" %>
+              <%= link_to "戻る", word_tank_index_tank_path(current_user.id) , class: "btn btn--blue btn--shadow" %>
+           <% elsif @tank.tank_type == "問題" %> 
+              <%= link_to "戻る", question_tank_index_tank_path(current_user.id) , class: "btn btn--blue btn--shadow" %>
+           <% end %>
       </div>
-      <% end %>
-        </div>
-
-        <div class="field">
-         <%= link_to "削除", tank_path(@tank.id), method: :delete ,class:  "btn btn--orange btn--shadow" %>
-         <% if @tank.tank_type == "単語" %>
-         <%= link_to "戻る", word_tank_index_tank_path(current_user.id) , class: "btn btn--blue btn--shadow" %>
-          <% elsif @tank.tank_type == "問題" %> 
-            <%= link_to "戻る", question_tank_index_tank_path(current_user.id) , class: "btn btn--blue btn--shadow" %>
-         <% end %>
-        </div>
   </div>
-
-
-
-</div>

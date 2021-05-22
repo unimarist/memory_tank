@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to tank_questions_path(@question.tank_id)
     else
-      flash.now[:error_question] = "各項目は必須です。500字以内で入力して下さい。/Questionは未登録である必要があります。"
+      flash.now[:error_question] = "各項目は必須です。500字以内で入力して下さい。/ Questionは未登録である必要があります。"
       render :new
     end
   end
@@ -30,7 +30,7 @@ class QuestionsController < ApplicationController
     elsif @question.update(question_params) && @question.correct_rate < 70
       redirect_to unlearned_tank_questions_path(@question.tank_id)
     else
-      flash.now[:error_question] = "各項目は必須です。500字以内で入力して下さい。/Questionは未登録である必要があります。"
+      flash.now[:error_question] = "各項目は必須です。500字以内で入力して下さい。/ Questionは未登録である必要があります。"
       render :edit
     end
   end

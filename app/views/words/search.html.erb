@@ -1,44 +1,47 @@
-<div class="tank_container2">
+<div class="container">
 
- 
- <div class="word_top">
-     <p class="p3"><%= @word_level %><%= @tank.tank_name %></p>
-  </div>
+   <div class="word_top">
+      <p class="center_font"><%= @word_level %><%= @tank.tank_name %></p>
+   </div>
 
- <div class="word_top_button">
+   <div class="word_top_button">
       <% if @word_level == "未習得Word :" %>
-       <%= link_to "戻る", unlearned_tank_words_path(@tank.id), class:  "btn btn--blue btn--shadow" %>
+         <%= link_to "戻る", unlearned_tank_words_path(@tank.id), class:  "btn btn--blue btn--shadow" %>
       <% elsif @word_level == "習得済Word :"  %>
-      <%= link_to "戻る", learned_tank_words_path(@tank.id), class:  "btn btn--blue btn--shadow" %>
+         <%= link_to "戻る", learned_tank_words_path(@tank.id), class:  "btn btn--blue btn--shadow" %>
       <% end %> 
- </div>
+   </div>
 
-  <% @words.each do |word|   %>
+   <% @words.each do |word|   %>
 
-   <div class=list2 >
+     <div class=contents_list >
 
-      <% if word.word == flash[:com] %>
-      <div id="link" ,class="p15">
-      <%= flash[:des] %>
-      </div>
-      <% end %>
+      <% if word.word == flash[:target] %>
+       <div class="result">
+         <div id="link">
+           <%= flash[:result] %>
+         </div>
+       </div>
+     <% end %>
   
      <div class="tank_name">
-         <p class="p6"><%= word.word %></p>
+         <p ><%= word.word %></p>
      </div>
-      <div class="tank_name2" >
-         <p class="p9"  ><%= word.meaning %></p>
-         <p class="p16">My正答率：<%= word.correct_rate %>%<br>(<%= word.correct_count + word.uncorrect_count %>回中<%= word.correct_count %>回正解)</p>
+     <div class="meaning_box" >
+         <p class="meaning"  ><%= word.meaning %></p>
+         <p class="calc"><%= word.correct_rate %>%<br><%= word.correct_count + word.uncorrect_count %>回中<%= word.correct_count %>回</p>
      </div>
 
       <div class="word_button">
-       　<%= link_to "分かった！", correct_count_tank_word_path(@tank.id,word.id), class: "btn btn--orange btn--shadow" %>
+        <div class="button_split">
+         <%= link_to "分かった！", correct_count_tank_word_path(@tank.id,word.id), class: "btn btn--orange btn--shadow" %>
          <%= link_to "分からなかった！", uncorrect_count_tank_word_path(@tank.id,word.id) ,class:  "btn btn--blue btn--shadow" %>
+        </div>
+        <div>
          <%= link_to "編集", edit_tank_word_path(@tank.id,word.id), class: "btn btn--orange btn--shadow" %>
          <%= link_to "削除", tank_word_path(@tank.id,word.id), method: :delete ,class:  "btn btn--blue btn--shadow" %>
+        </div>
       </div>
     </div>
-
   <% end %>
 </div>
-

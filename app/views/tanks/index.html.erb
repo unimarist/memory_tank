@@ -10,7 +10,6 @@
        <p class="center_font">Question Tank</p> 
      </div>
   </div>
-
   <% if user_signed_in? %>
      <div class="tank">
        <div >
@@ -19,7 +18,7 @@
        <div>
          <%= link_to image_tag("/images/tank_img_2.jpg", class: 'right_tank' )  , question_tank_index_tank_path(current_user.id)   %>
        </div>
-  </div>
+     </div>
   <% else %>
      <div class="tank">
         <div >
@@ -39,7 +38,7 @@
          <li type="disc" class="title">アイコンをクリックして始めよう▲</li>
         <% end %>
          <li type="disc">単語をカテゴリ別のTankに分けて蓄積可能</li> 
-         <li type="disc">単語を暗記度に応じて、習得済Tankと未習得Tankに振り分け</li>
+         <li type="disc">単語を正答率に応じて、習得済Tankと未習得Tankに振り分け</li>
          <li type="disc">単語を覚えて、未習得Tankから習得済Tankに移していこう！</li>
         </ul> 
     </div>

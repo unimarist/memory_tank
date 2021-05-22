@@ -1,7 +1,7 @@
 <div class="question_container">
   <div class="container_2">
 
-    <p class="p1">Questionの編集 : <%= @tank.tank_name %></p>
+    <p class="center_font">Questionの編集 : <%= @tank.tank_name %></p>
 
     <%= flash.now[:error_question] %> 
 
@@ -29,7 +29,7 @@
       </div>
       <div class="field">
         <%= form.label :correct_answer ,"正解選択肢 (必須)" %><br />
-        <p>A:<%= form.radio_button :correct_answer,'A' %></p>
+        <p>A:<%= form.radio_button :correct_answer, 'A' %></p>
         <p>B:<%= form.radio_button :correct_answer, 'B' %></p>
         <p>C:<%= form.radio_button :correct_answer, 'C' %></p>
         <p>D:<%= form.radio_button :correct_answer, 'D' %></p>
@@ -39,18 +39,14 @@
         <%= form.text_area :description, class:"text_area" %>
       </div>
 
-
       <div class="field">
-         <%= form.submit "編集する" ,class: "btn btn--orange btn--shadow" %>
+         <%= form.submit "編集する" ,class: "btn-n btn--orange btn--shadow" %>
           <% if @question.correct_rate >= 70 %>
-         <%= link_to "戻る", learned_tank_questions_path(@question.tank_id), class: "btn btn--blue btn--shadow" %>
+             <%= link_to "戻る", learned_tank_questions_path(@question.tank_id), class: "btn btn--blue btn--shadow" %>
          <% else %>
-          <%= link_to "戻る", unlearned_tank_questions_path(@question.tank_id), class: "btn btn--blue btn--shadow" %>
+             <%= link_to "戻る", unlearned_tank_questions_path(@question.tank_id), class: "btn btn--blue btn--shadow" %>
           <% end %>
-      </div>
+      </div><br>
     <% end %>
-
-
   </div>
 </div>
-
