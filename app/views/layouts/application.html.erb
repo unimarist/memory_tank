@@ -24,8 +24,7 @@
          <% if user_signed_in? %>
 
            <div class="user_name">
-              <p class="heading">ユーザ名</p>
-              <p class="heading"><%= current_user.username %></p>
+              <p class="heading">ユーザ名：<%= current_user.username %></p>
            </div>
 
            <% if current_user.user_icon.presence %>
