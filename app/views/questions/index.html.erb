@@ -1,6 +1,7 @@
 <div class="question_container">
     <div class="word_top">
-     <pre class="center_font">★ QuestionTank ★<br><%= @tank.tank_name %></pre><br>
+     <pre class="center_font">★ QuestionTank ★&nbsp;&nbsp;&nbsp;&nbsp;
+     <%= @tank.tank_name %></pre><br>
    </div>
    <div class="tank_top">
       <%= link_to "Questionを登録する", new_tank_question_path(@tank.id), class: "btn btn--orange btn--shadow" %>

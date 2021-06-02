@@ -1,7 +1,8 @@
 <div class="tank_container_up">
 
    <div class="word_top">  
-      <p class="center_font">★ 習得済Question ★<br><%= @tank.tank_name %> </p>
+      <p class="center_font">★ 習得済Question ★<br>&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= @tank.tank_name %> </p>
    </div>
    <div class="word_top_button">
       <%= link_to "戻る", tank_questions_path(@tank.id), class:  "btn btn--blue btn--shadow" %>
