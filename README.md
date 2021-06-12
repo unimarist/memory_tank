@@ -21,12 +21,13 @@
   ○ nginx 1.12<br>
   ○ unicorn 6.0.0<br>
   ○ mysql 5.7<br>
-  ○ AWS(EC2/VPC/ALB/ACM/Route53/RDS)<br>
+  ○ AWS(CloudFormation/EC2/VPC/ALB/ACM/Route53/RDS)<br>
 - その他使用ツール<br>
   ○ Visual Studio Code<br>
   ○ draw.io
 
 # AWS構成図
+以下構成をAWSのCloudFormationでコード化し、構築をしました。
 <img width="781" alt="スクリーンショット 2021-06-12 20 27 09" src="https://user-images.githubusercontent.com/75885767/121774441-680ef400-cbbd-11eb-883f-81324a475260.png">
 
 # 機能一覧
@@ -44,49 +45,43 @@
 
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| name     | string | null: false |
-| email    | string | null: false |
+| username     | string | null: false |
 | password | string | null: false |
 
 ### Association
 
-- has_many :room_users
-- has_many :rooms, through: room_users
-- has_many :messages
+- has_many :words
+- has_many :questions
 
-## rooms テーブル
+## tanks テーブル
 
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
-
-### Association
-
-- has_many :room_users
-- has_many :users, through: room_users
-- has_many :messages
-
-## room_users テーブル
-
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| room   | references | null: false, foreign_key: true |
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| word     | string | null: false |
+| meaning | string | null: false |
+| correct_count | integer | null: false |
+| uncorrect_count | integer | null: false |
+| user_id | integer | null: false |
+| tank_id | integer | null: false |
 
 ### Association
 
-- belongs_to :room
 - belongs_to :user
+- belongs_to :tank
 
-## messages テーブル
 
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| content | string     |                                |
-| user    | references | null: false, foreign_key: true |
-| room    | references | null: false, foreign_key: true |
+## words テーブル
+
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| word     | string | null: false |
+| meaning | string | null: false |
+| correct_count | integer | null: false |
+| uncorrect_count | integer | null: false |
+| user_id | integer | null: false |
+| tank_id | integer | null: false |
 
 ### Association
 
-- belongs_to :room
 - belongs_to :user
+- belongs_to :tank
