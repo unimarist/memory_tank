@@ -27,7 +27,7 @@
   ○ draw.io
 
 # AWS構成図
-
+<img width="781" alt="スクリーンショット 2021-06-12 20 27 09" src="https://user-images.githubusercontent.com/75885767/121774441-680ef400-cbbd-11eb-883f-81324a475260.png">
 
 # テーブル設計
 
