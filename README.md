@@ -1,3 +1,6 @@
+
+<img width="1670" alt="スクリーンショット 2021-06-12 20 05 36" src="https://user-images.githubusercontent.com/75885767/121773812-765b1100-cbb9-11eb-9e5a-828b8d9b3e01.png">
+
 # アプリケーションの概要
 
 
