@@ -8,7 +8,23 @@
 - ユーザは様々なWord(単語)や自作の四択問題をカテゴリ別に管理した上で蓄積ができる
 - 蓄積したWordや四択問題はユーザ自身の定着率/正答率に応じて、習得済と未習得の2つのカテゴリに分割して自動管理される<br>
 
+# App URL
+- https://www.memory-tank.ga/
 
+# 使用技術
+- フロントエンド<br>
+  ○ HTML/CSS
+- バックエンド<br>
+  ○ ruby 2.6.5<br>
+  ○ Ruby on Rails 6.0.3
+- インフラ<br>
+  ○ nginx 1.12<br>
+  ○ unicorn 6.0.0<br>
+  ○ mysql 5.7<br>
+  ○ AWS(EC2/VPC/ALB/ACM/Route53/RDS)<br>
+- その他使用ツール<br>
+  ○ Visual Studio Code<br>
+  ○ draw.io
 
 
 # テーブル設計
