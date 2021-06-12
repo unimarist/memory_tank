@@ -26,6 +26,8 @@
   ○ Visual Studio Code<br>
   ○ draw.io
 
+# AWS構成図
+
 
 # テーブル設計
 
