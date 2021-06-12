@@ -50,6 +50,7 @@
 
 ### Association
 
+- has_many :tanks
 - has_many :words
 - has_many :questions
 
@@ -57,18 +58,13 @@
 
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| word     | string | null: false |
-| meaning | string | null: false |
-| correct_count | integer | null: false |
-| uncorrect_count | integer | null: false |
+| tank_name     | string | null: false |
+| tank_type     | string | null: false |
 | user_id | integer | null: false |
-| tank_id | integer | null: false |
 
 ### Association
-
-- belongs_to :user
-- belongs_to :tank
-
+- has_many :words
+- has_many :questions
 
 ## words テーブル
 
@@ -78,8 +74,33 @@
 | meaning | string | null: false |
 | correct_count | integer | null: false |
 | uncorrect_count | integer | null: false |
+| correct_rate | integer | null: false |
 | user_id | integer | null: false |
 | tank_id | integer | null: false |
+
+### Association
+
+- belongs_to :user
+- belongs_to :tank
+
+
+## questions テーブル
+
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+|   question   | string | null: false |
+|   answer_a   | string | null: false |
+|   answer_b   | string | null: false |
+|   answer_c   | string | null: false |
+|   answer_d   | string | null: false |
+|   correct_answer   | string | null: false |
+|   description   | string | null: false |
+| correct_count | integer | null: false |
+| uncorrect_count | integer | null: false |
+| correct_rate | integer | null: false |
+| user_id | integer | null: false |
+| tank_id | integer | null: false |
+
 
 ### Association
 
