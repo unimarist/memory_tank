@@ -11,7 +11,7 @@
 
   <body>
    <header class="header">
-
+    <div class="flex_between">
       <div class="header_left">
         <div class="header_left_main">
            <a href="/"><p class="title">MemoryTank</p></a>
@@ -19,14 +19,14 @@
         <div class="header_left_sub">
            <p class="heading">〜効率的なナレッジ蓄積と知識定着を支援〜</p> 
         </div>
-      </div>
-
-         <% if user_signed_in? %>
-
-           <div class="user_name">
-              <p class="heading">ユーザ名：<%= current_user.username %></p>
-           </div>
-
+     </div>   
+    <% if user_signed_in? %>
+     <div class="user_name">
+           <p class="heading">ユーザ名：<%= current_user.username %></p>
+     </div>
+    </div>
+   
+     <div class="flex_end">
            <% if current_user.user_icon.presence %>
               <div class="user_icon">
                 <%= link_to image_tag(current_user.user_icon, class: 'icon_image' )  , edit_user_registration_path  %>
@@ -49,6 +49,7 @@
                <%= link_to "新規登録", new_user_registration_path, class:  "btn btn--blue btn--shadow" %>
             </div>
          <% end %>
+      </div>
     </header>
 
     <%= yield %>
