@@ -1,15 +1,15 @@
-.container{
+.container {
   text-align: center;
-  padding-top:150px;
-  height:auto;
-  min-height:92vh;
-  background-color:#F4FBFE;
-  width:100vw;
+  padding-top: 150px;
+  height: auto;
+  min-height: 92vh;
+  background-color: #f4fbfe;
+  width: 100vw;
 }
 
-.field{
+.field {
   margin-top: 35px;
-  font-family:"MS PGothic", "Osaka", Arial, sans-serif;
+  font-family: "MS PGothic", "Osaka", Arial, sans-serif;
 }
 
 input[type="text"] {
@@ -25,6 +25,6 @@ input[type="password"] {
 }
 
 input[type="submit"] {
-  height:35px;
+  height: 35px;
   text-align: center;
 }
