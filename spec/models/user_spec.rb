@@ -50,10 +50,12 @@ RSpec.describe User, type: :model do
     end
     it "usernameが16文字以上の場合" do
       @user.username = Faker::Name.initials(number: 16)
-      expect(@user).to be_valid
+      @user.valid?
+      expect(@user.errors.full_messages).to include "Username is too long (maximum is 15 characters)"
     end
     it "passwordが5文字以下の場合" do
       @user.password =  "test"
+      @user.password_confirmation = @user.password
       @user.valid?
       expect(@user.errors.full_messages).to include "Password is too short (minimum is 6 characters)"
     end

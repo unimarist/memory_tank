@@ -4,46 +4,46 @@
     <p class="center_font">Questionを削除しますか？</p>
 
        <div class="field">
-        <p>Question</p><br />
+        <p>【Question】</p><br />
         <%= @question.question %>
       </div>
 
       <div class="field">
-        <p>解答選択肢-A</p><br />
+        <p>【解答選択肢-A】</p><br />
         <%= @question.answer_a %>
       </div>
 
        <div class="field">
-        <p>解答選択肢-B</p><br />
+        <p>【解答選択肢-B】</p><br />
         <%= @question.answer_b %>
       </div>
 
        <div class="field">
-        <p>解答選択肢-C</p><br />
+        <p>【解答選択肢-C】</p><br />
         <%= @question.answer_c %>
       </div>
 
        <div class="field">
-        <p>解答選択肢-D</p><br />
+        <p>【解答選択肢-D】</p><br />
         <%= @question.answer_d %>
       </div>
 
       <div class="field">
-        <p>正解選択肢</p><br />
+        <p>【正解選択肢】</p><br />
         <%= @question.correct_answer %>
       </div>
 
       <div class="field">
-        <p>解説</p><br />
+        <p>【解説】</p><br />
         <%= @question.description %>
       </div>
   
       <div class="field">
-        <%= link_to "削除", tank_question_path(@question.tank_id), method: :delete ,class:  "btn btn--orange btn--shadow" %>
+        <%= link_to "削除", tank_question_path(@question.tank_id), method: :delete ,class:  "btn btn--orange" %>
           <% if @question.correct_rate >= 70 %>
-             <%= link_to "戻る", learned_tank_questions_path(@question.tank_id), class: "btn btn--blue btn--shadow" %>
+             <%= link_to "戻る", learned_tank_questions_path(@question.tank_id), class: "btn btn--blue" %>
           <% else %>
-              <%= link_to "戻る", unlearned_tank_questions_path(@question.tank_id), class: "btn btn--blue btn--shadow" %>
+              <%= link_to "戻る", unlearned_tank_questions_path(@question.tank_id), class: "btn btn--blue" %>
           <% end %>
       </div><br>
   </div>

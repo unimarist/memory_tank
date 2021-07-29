@@ -1,7 +1,7 @@
 <div class="tank_container_up">
 
   <div class="word_top">
-     <p class="center_font">★ 習得済Word ★<br>&nbsp;&nbsp;&nbsp;&nbsp;
+     <br><p class="center_font">習得済Word<br><br>
      <%= @tank.tank_name %></p>
   </div>
 
@@ -9,8 +9,8 @@
      <%= form_with(url: search_tank_words_path(@tank.id), local: true, method: :get) do |form|  %>
      <%= form.text_field :search_key, placeholder: "Wordを検索する" %>
      <%= form.hidden_field :word_level, value: "習得済Word :" %>
-     <%= form.submit "検索", class: "btn-n btn--orange btn--shadow" %>
-     <%= link_to "戻る", tank_words_path(@tank.id), class:  "btn btn--blue btn--shadow" %>  
+     <%= form.submit "検索", class: "btn-n btn--orange" %>
+     <%= link_to "戻る", tank_words_path(@tank.id), class:  "btn btn--blue" %>  
      <% end %> 
   </div>
   <p class="center3">黒い四角にカーソルをあてて意味を確認し、「分かった！」もしくは「分からなかった！」ボタンを押そう！</p><br>
@@ -33,18 +33,18 @@
        </div>
 
        <div class="meaning_box" >
-         <p class="meaning"  ><%= word.meaning %></p>
+         <p class="meaning"  ><%= word.meaning %></p><br>
          <p class="calc"><%= word.correct_rate %>%<br><%= word.correct_count + word.uncorrect_count %>回中<%= word.correct_count %>回</p>
        </div>
 
        <div class="word_button" data-turbolinks="false">
          <div class="button_split">
-          <%= link_to "分かった！", correct_count_tank_word_path(@tank.id,word.id),class: "btn btn--orange btn--shadow" %>
-          <%= link_to "分からなかった！", uncorrect_count_tank_word_path(@tank.id,word.id) ,class:  "btn btn--blue btn--shadow" %>
+          <%= link_to "分かった！", correct_count_tank_word_path(@tank.id,word.id),class: "btn btn--orange" %>
+          <%= link_to "分からなかった！", uncorrect_count_tank_word_path(@tank.id,word.id) ,class:  "btn btn--blue" %>
          </div>
          <div>
-          <%= link_to "編集", edit_tank_word_path(@tank.id,word.id), class: "btn btn--orange btn--shadow" %>
-          <%= link_to "削除", delete_confirm_tank_word_path(@tank.id,word.id),class:  "btn btn--blue btn--shadow" %>
+          <%= link_to "編集", edit_tank_word_path(@tank.id,word.id), class: "btn btn--orange" %>
+          <%= link_to "削除", delete_confirm_tank_word_path(@tank.id,word.id),class:  "btn btn--blue" %>
          </div>
        </div>
      </div>

@@ -2,128 +2,138 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.tank_container{
-  background-color:#F4FBFE;
+.tank_container {
+  background-color: #f4fbfe;
   text-align: center;
-  padding-top:15vh;
+  padding-top: 15vh;
   background-size: contain;
-  min-height:92vh;
-  height:auto;
-  width:100vw;
+  min-height: 92vh;
+  height: auto;
+  width: 100vw;
 }
 
-.tank_title{
-  margin-top:3vh;
+.lp {
   display: flex;
   justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 5px;
 }
 
-.left_tank_title{
-  margin-left:29vw;
-  border-bottom: solid 5px tomato; 
+.lp-left {
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 40vw;
+  margin-left: 5vw;
 }
 
-.right_tank_title{
-  margin-right:28.5vw;
-  border-bottom: solid 5px tomato;
+.lp-right {
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 40vw;
+  margin-right: 5vw;
 }
 
-.center_font{
-  color:#2f4f4f;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:30px;
-  font-weight:900;
+.tank_title {
+  margin-top: 30px;
+  border-bottom: solid 3px tomato;
 }
 
-.tank{
-  margin-top:5vh;
-  display: flex;
-  justify-content: space-between;
+.status_tank_title {
+  margin-top: 30px;
+  border-bottom: solid 3px tomato;
 }
 
-.tank_comment{
-  margin-top:3vh;
-  display: flex;
+.center_font {
+  color: #000000;
+  font-family: "dnp-shuei-gothic-gin-std, sans-serif";
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 30px;
 }
 
-.memory_tank_comment{
-  margin-left:8vw;
+.tank {
+  margin-top: 5vh;
 }
 
-.question_tank_comment{
-  margin-right:8vw;
-  margin-left:14vw;
-}
-
-.comment{
-  color:#2f4f4f;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:29.5px;
-  font-weight:900;
-  margin-bottom:30px;
-  margin-left:3vw;
-}
-
-.comment_sub{
-  color:#2f4f4f;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:18px;
-  font-weight:900;
+.memory_tank_comment {
   text-align: left;
-  margin-left:4vw;
+  margin-top: 3vh;
+  margin-left: 30px;
+  margin-bottom: 30px;
 }
 
-.tank_container_up{
-  background-color:#fffafa;
-  padding-top:15vh;
+.question_tank_comment {
+  text-align: left;
+  margin-top: 3vh;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.comment {
+  color: #000000;
+  font-family: "dnp-shuei-gothic-gin-std, sans-serif";
+  font-size: 29.5px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.comment_sub {
+  color: #666666;
+  font-family: "dnp-shuei-gothic-gin-std, sans-serif";
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.tank_container_up {
+  background-color: #fff0f5;
+  padding-top: 15vh;
   background-size: contain;
-  min-height:92vh;
-  height:auto;
-  width:100vw;
+  min-height: 92vh;
+  height: auto;
+  width: 100vw;
 }
 
-.tank_container_down{
+.tank_container_down {
   background-color: #f5fffa;
-  padding-top:15vh;
+  padding-top: 15vh;
   background-size: contain;
-  min-height:92vh;
-  height:auto;
-  width:100vw;
+  min-height: 92vh;
+  height: auto;
+  width: 100vw;
 }
 
-.tank_container2{
+.tank_container2 {
   background-color: aliceblue;
-  padding-top:15vh;
+  padding-top: 15vh;
   background-size: contain;
-  min-height:92vh;
-  height:auto;
-  width:100vw;
+  min-height: 92vh;
+  height: auto;
+  width: 100vw;
 }
 
-.tank_top{
-  margin-right:40vw;
-  margin-left:40vw;
+.tank_top {
   display: flex;
+  justify-content: center;
 }
 
-.list{
-  display:inline-block;
-  margin-left:13vw;
-  margin-top:30px;
+.list {
+  display: inline-block;
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-bottom: 3px;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
-.tank_name{
-  width:250px;
+.tank_name {
+  width: 250px;
   overflow-wrap: break-word;
-  color:#2f4f4f;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:30px;
-  font-weight:900;
+  color: #000000;
+  font-family: "dnp-shuei-gothic-gin-std, sans-serif";
+  font-size: 30px;
+  font-weight: 400;
   text-align: center;
 }
 
-.tank_button{
+.tank_button {
   display: inline-flex;
-  margin-bottom:50px;
-  margin-left:65px;
+  margin-bottom: 50px;
+  margin-left: 65px;
 }

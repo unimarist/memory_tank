@@ -1,38 +1,53 @@
 <div class="container">
-   <div class="word_top">
-     <p class="center_font">★ WordTank ★<br><%= @tank.tank_name %><br><br>
+
+ <div class="word_top">
+     <p class="center_font">WordTank<br><br><%= @tank.tank_name %><br><br>
+ </div>
+ <div class="tank_top">
+      <%= link_to "Wordを登録する", new_tank_word_path(@tank.id), class: "btn btn--orange" %>
+      <%= link_to "戻る", word_tank_index_tank_path(current_user.id), class:  "btn btn--blue" %> 
+ </div><br><br>
+ <div class="center3">
+     <p>Wordを登録するとまずは「未習得Tank」に蓄積されるよ！</p><br>
+     <p>Wordの意味を答えて、「習得済Tank」に移動させよう！</p>
+ </div>
+
+ <div class="lp">
+
+  <div class="lp-left">
+   <div class="tank_title">
+      <p class="center_font">習得済Tank</p> 
    </div>
-    <div class="tank_top">
-      <%= link_to "Wordを登録する", new_tank_word_path(@tank.id), class: "btn btn--orange btn--shadow" %>
-      <%= link_to "戻る", word_tank_index_tank_path(current_user.id), class:  "btn btn--blue btn--shadow" %> 
-    </div><br>
-   <p class="center3">Wordを登録するとまずは「未習得Tank」に蓄積されるよ！</p>
-   <p class="center3">Wordの意味を覚えて、「習得済Tank」に移動させよう！</p>
 
-  <div class="tank_title">
-     <div class="left_tank_title">
-       <p class="center_font">習得済Tank</p> 
+     <div class="tank">
+         <%= link_to image_tag("/images/up.jpg", class: 'left_tank' )  , learned_tank_words_path(@tank.id)   %>
      </div>
-     <div class="right_tank_title">
+
+    <div class="memory_tank_comment">
+       <p class="comment">自分の正答率が<span class="tomato">70%</span>以上のWord</p> 
+         <p class="comment_sub">・自分の正答率が高い単語が自動で蓄積されるよ</p><br> 
+         <p class="comment_sub">・習得済の単語も定期的に復習しよう</p><br>
+         <p class="comment_sub">・正答率が70%を下回った単語は、未習得Tankに戻ってしまうよ</p>
+    </div>
+  </div>
+
+
+  <div class="lp-right">
+   <div class="tank_title">
        <p class="center_font">未習得Tank</p> 
+   </div>
+     <div class="tank">
+          <%= link_to image_tag("/images/down.jpg", class: 'right_tank' )  , unlearned_tank_words_path(@tank.id)   %>
      </div>
+
+   <div class="question_tank_comment">
+       <p class="comment">自分の正答率が<span class="tomato">70%</span>未満のWord</p> 
+         <p class="comment_sub">・自分の正答率が低い単語が自動で蓄積されるよ</p><br> 
+         <p class="comment_sub">・登録したてのWordはまず未習得Tankに保存されるよ</p><br>
+         <p class="comment_sub">・正答率が70%を上回ると習得済Tankに移動されるよ</p>
+    </div> 
   </div>
 
-  <div class="tank">
-     <div >
-       <%= link_to image_tag("/images/up.jpg", class: 'left_tank' )  , learned_tank_words_path(@tank.id)   %>
-     </div>
-     <div>
-       <%= link_to image_tag("/images/down.jpg", class: 'right_tank' )  , unlearned_tank_words_path(@tank.id)   %>
-     </div>
-  </div>
 
-  <div class="tank_comment">
-      <div class="memory_tank_comment">
-        <p class="comment">自分の正答率が<span class="tomato">70%</span>以上のWordが蓄積</p> 
-      </div>
-      <div class="question_tank_comment">
-        <p class="comment">自分の正答率が<span class="tomato">70%</span>未満のWordが蓄積</p> 
-      </div>
-  </div>
+ </div>
 </div>

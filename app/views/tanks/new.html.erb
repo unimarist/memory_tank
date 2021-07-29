@@ -9,7 +9,7 @@
 
     <%=form_with model: @tank, local: true do |form| %>
        <div class="field">
-          <%= form.label :tank_name ,"Tank名 (必須：30文字以内)" %><br />
+          <%= form.label :tank_name ,"Tank名 (必須：30文字以内)" %><br><br>
           <%= form.text_field :tank_name %>
        </div>
        
@@ -29,11 +29,11 @@
        </div>
 
        <div class="field">
-         <%= form.submit "作成する" ,class: "btn-n btn--orange btn--shadow" %>
+         <%= form.submit "作成する" ,class: "btn-n btn--orange" %>
            <% if @tank_type == "単語" %>
-             <%= link_to "戻る", word_tank_index_tank_path(current_user.id) , class: "btn btn--blue btn--shadow" %>
+             <%= link_to "戻る", word_tank_index_tank_path(current_user.id) , class: "btn btn--blue" %>
            <% elsif @tank_type =="問題" %>
-             <%= link_to "戻る", question_tank_index_tank_path(current_user.id) , class: "btn btn--blue btn--shadow" %>
+             <%= link_to "戻る", question_tank_index_tank_path(current_user.id) , class: "btn btn--blue" %>
            <% end %>
        </div>
     <% end %>

@@ -75,7 +75,7 @@ class WordsController < ApplicationController
     @word_level = params[:word_level]
     if @word_level == "未習得Word :" && (search_key.nil? || search_key == "")
       redirect_to unlearned_tank_words_path(params[:tank_id])
-    elsif @word_level == "習得済Word :" && (key.nil? || key == "")
+    elsif @word_level == "習得済Word :" && (search_key.nil? || search_key == "")
       redirect_to learned_tank_words_path(params[:tank_id])
     else
       @words = Word.search(params[:tank_id],search_key,@word_level)

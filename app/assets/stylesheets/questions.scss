@@ -2,92 +2,95 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.question_comment{
-  color:#2f4f4f;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:28px;
-  font-weight:900;
-  margin-bottom:30px;
-  margin-left:2.3vw;
+.question_comment {
+  color: #2f4f4f;
+  font-family: "dnp-shuei-gothic-gin-std, sans-serif";
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 30px;
+  margin-left: 2.3vw;
 }
 
-.question_container{
-  background-color:#F4FBFE;
-  padding-top:120px;
-  background-size: contain;
-  min-height:92vh;
-  height:auto;
+.question_container {
+  text-align: center;
+  padding-top: 150px;
+  height: auto;
+  min-height: 92vh;
+  background-color: #f4fbfe;
+  width: 100vw;
 }
 
-.text_area{
+.text_area {
   margin-top: 5px;
-  font-family:"MS PGothic", "Osaka", Arial, sans-serif;
-  width:600px;
-  height:80px;
+  font-family: "MS PGothic", "Osaka", Arial, sans-serif;
+  width: 600px;
+  height: 80px;
 }
 
-.container_2{
+.container_2 {
   text-align: center;
 }
 
-.question_box{
-  width:80vw;
+.question_box {
+  width: 80vw;
   overflow-wrap: break-word;
-  margin-left:8vw;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  padding-top:20px;
-  display:flex;
+  margin-left: 8vw;
+  font-family: "dnp-shuei-gothic-gin-std, sans-serif";
+  padding-top: 20px;
+  display: flex;
 }
 
-.question{
-  color:#2f4f4f;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:30px;
-  font-weight:900;
+.question {
+  color: #000000;
+  font-family: "dnp-shuei-gothic-gin-std, sans-serif";
+  font-size: 30px;
+  font-weight: 400;
   overflow-wrap: break-word;
-  margin-top:15px;
+  margin-top: 15px;
 }
 
-.question_contents{
-  width:80vw;
+.question_contents {
+  width: 80vw;
   overflow-wrap: break-word;
-  margin-left:8vw;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  padding-top:20px;
+  margin-left: 8vw;
+  padding-top: 20px;
+  display: flex;
 }
 
-.question_line{
-  color:#2f4f4f;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:30px;
-  font-weight:900;
+.question_line {
+  color: #000000;
+  font-family: "dnp-shuei-gothic-gin-std, sans-serif";
+  font-size: 30px;
+  font-weight: 400;
 }
 
-.question_calc{
-  color:red;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:14px;
+.question_calc {
+  color: red;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 14px;
   overflow-wrap: break-word;
-  margin-left:30px;
-  margin-top:25px;
-  font-weight:900;
+  margin-left: 30px;
+  margin-top: 25px;
+  font-weight: 900;
 }
 
-.question_result{
-  color:red;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:20px;
-  font-weight:900;
+.question_result {
+  color: red;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 20px;
+  font-weight: 900;
   overflow-wrap: break-word;
-  width:80vw;
-  margin-left:130px;
-  margin-top:10px;
+  width: 80vw;
+  margin-left: 130px;
+  margin-top: 10px;
 }
 
-.question_button{
+.question_button {
   display: inline-flex;
-  margin-top:15px;
-  margin-bottom:50px;
-  margin-left:8vw;
-  font-size:15px;
+  margin-top: 15px;
+  margin-bottom: 50px;
+  margin-left: 8vw;
+  font-size: 15px;
 }

@@ -2,77 +2,80 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.word_top{
-  margin-right:38vw;
-  margin-left:38vw;
+.word_top {
+  text-align: center;
 }
 
-.word_top_button{
-  margin-right:47vw;
-  margin-left:47vw;
-  margin-top:3vh;
-  margin-bottom:5vh;
+.word_top_button {
+  margin-right: 47vw;
+  margin-left: 47vw;
+  margin-top: 3vh;
+  margin-bottom: 5vh;
 }
 
-.search_top{
-  margin-right:30vw;
-  margin-left:30vw;
-  margin-bottom:30px;
+.search_top {
+  margin-right: 30vw;
+  margin-left: 30vw;
+  margin-bottom: 30px;
   display: flex;
 }
 
-.contents_list{
-  display:inline-block;
-  margin-left:2vw;
+.contents_list {
+  display: inline-block;
+  margin-left: 2vw;
 }
 
-.result{
-  color:red;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:20px;
-  font-weight:900;
+.result {
+  color: red;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 20px;
+  font-weight: 900;
   overflow-wrap: break-word;
 }
 
-.meaning_box{
-  width:350px;
+.meaning_box {
+  width: 350px;
   overflow-wrap: break-word;
-  display:flex;
+  display: flex;
 }
 
-.meaning{
-  background-color :black;
-  color:black;
-  color:black;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:30px;
-  font-weight:900;
-  text-align: center;
-  width:230px;
+.meaning {
+  background-color: black;
+  color: black;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: left;
+  width: 230px;
   overflow-wrap: break-word;
+  overflow: scroll;
+  height: 8vh;
 }
 
 .meaning:hover {
   background-color: aliceblue;
 }
 
-.calc{
-  color:red;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:14px;
+.calc {
+  color: red;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 14px;
   overflow-wrap: break-word;
-  margin-left:20px;
-  font-weight:900;
+  margin-left: 20px;
+  font-weight: 900;
 }
 
-.word_button{
+.word_button {
   display: inline-flex;
-  margin-top:15px;
-  margin-bottom:50px;
-  width:380px;
-  font-size:15px;
+  margin-top: 15px;
+  margin-bottom: 50px;
+  width: 380px;
+  font-size: 15px;
 }
 
-.button_split{
-  margin-right:10px;
+.button_split {
+  margin-right: 10px;
 }

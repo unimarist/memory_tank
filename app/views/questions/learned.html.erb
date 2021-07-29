@@ -1,7 +1,7 @@
 <div class="tank_container_up">
 
    <div class="word_top">  
-      <p class="center_font">★ 習得済Question ★<br>&nbsp;&nbsp;&nbsp;&nbsp;
+      <p class="center_font">習得済Question<br><br>
       <%= @tank.tank_name %> </p>
    </div>
    <div class="word_top_button">
@@ -24,16 +24,16 @@
      </div>
      
       <div class="question_contents" >
-      <%= link_to "A", check_a_tank_question_path(@tank.id,question.id), class: "btn btn--gray btn--shadow" %><%=simple_format(question.answer_a,class: "question") %>
+      <%= link_to "A", check_a_tank_question_path(@tank.id,question.id), class: "btn btn--gray" %><%=simple_format(question.answer_a,class: "question") %>
      </div>
       <div class="question_contents" >
-       <%= link_to "B", check_b_tank_question_path(@tank.id,question.id), class: "btn btn--gray btn--shadow" %><%=simple_format(question.answer_b,class: "question") %>
+       <%= link_to "B", check_b_tank_question_path(@tank.id,question.id), class: "btn btn--gray" %><%=simple_format(question.answer_b,class: "question") %>
      </div>
       <div class="question_contents" >
-       <%= link_to "C", check_c_tank_question_path(@tank.id,question.id), class: "btn btn--gray btn--shadow" %><%=simple_format(question.answer_c,class: "question") %>
+       <%= link_to "C", check_c_tank_question_path(@tank.id,question.id), class: "btn btn--gray" %><%=simple_format(question.answer_c,class: "question") %>
      </div>
       <div class="question_contents" >
-       <%= link_to "D", check_d_tank_question_path(@tank.id,question.id), class: "btn btn--gray btn--shadow" %><%=simple_format(question.answer_d,class: "question") %>
+       <%= link_to "D", check_d_tank_question_path(@tank.id,question.id), class: "btn btn--gray" %><%=simple_format(question.answer_d,class: "question") %>
      </div>
 
      <div class="question_result">
@@ -45,8 +45,8 @@
      </div>
 
       <div class="question_button">
-          <%= link_to "編集", edit_tank_question_path(@tank.id,question.id), class: "btn btn--orange btn--shadow" %>
-          <%= link_to "削除", delete_confirm_tank_question_path(@tank.id,question.id),class:  "btn btn--blue btn--shadow" %>
+          <%= link_to "編集", edit_tank_question_path(@tank.id,question.id), class: "btn btn--orange" %>
+          <%= link_to "削除", delete_confirm_tank_question_path(@tank.id,question.id),class:  "btn btn--blue" %>
       </div>
     </div>
   <% end %>

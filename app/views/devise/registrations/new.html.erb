@@ -3,21 +3,21 @@
        <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
        <%= devise_error_messages! %>
         <div class="field">
-          <%= f.label :"ユーザ名" %> (最大15文字まで)<br />
-          <%= f.text_field :username, autofocus: true, maxlength: "15" %>
+          <%= f.label :"ユーザ名" %> (最大15文字まで)<br><br>
+          <%= f.text_field :username, autofocus: true %>
         </div>
         <div class="field">
           <%= f.label :"パスワード" %>
-            (最低<%= @minimum_password_length %> 文字以上)<br />
+            (最低<%= @minimum_password_length %> 文字以上)<br><br>
           <%= f.password_field :password, autocomplete: "off" %>
         </div>
         <div class="field">
-          <%= f.label :"パスワード(確認)" %><br />
+          <%= f.label :"パスワード(確認)" %><br><br>
           <%= f.password_field :password_confirmation, autocomplete: "off" %>
         </div>
         <div class="field">
-          <%= f.submit "登録する", class: "btn-n btn--orange btn--shadow" %>
-          <%= link_to "戻る", "/", class:  "btn btn--blue btn--shadow" %> 
+          <%= f.submit "登録する", class: "btn-n btn--orange" %>
+          <%= link_to "戻る", "/", class:  "btn btn--blue" %> 
         </div>
        <% end %>
   </div>
