@@ -4,8 +4,8 @@
      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
        <%= render "devise/shared/error_messages", resource: resource %>
        <div class="field">
-          <%= f.label :"ユーザ名" %> (最大15文字まで)<br />
-          <%= f.text_field :username, autofocus: true, maxlength: "15" %>
+          <%= f.label :"ユーザ名" %> (最大15文字まで)<br><br>
+          <%= f.text_field :username, autofocus: true %>
        </div>
        <div class="field">
            <p>現在のユーザアイコン</p><br />
@@ -18,24 +18,24 @@
               <%= image_tag("/images/default_user.png", class: 'icon')  %>
             </div>
            <% end %>
-           <%= f.label :"ユーザアイコンを変更する場合は画像ファイルを選択して下さい▼" %><br/><br>
+           <br><%= f.label :"ユーザアイコンを変更する場合は画像ファイルを選択して下さい▼" %><br><br>
            <%= f.file_field :user_icon %>
        </div>
        <div class="field">
-           <%= f.label :"パスワード変更： 新しいパスワード" %> (最低6文字以上)<br />
+           <%= f.label :"パスワード変更： 新しいパスワード" %> (最低6文字以上)<br><br>
            <%= f.password_field :password, autocomplete: "new-password" %>
        </div>
        <div class="field">
-           <%= f.label :"新しいパスワード(確認)" %><br />
+           <%= f.label :"新しいパスワード(確認)" %><br><br>
            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
        </div>
        <div class="field">
-           <%= f.label :"上記内容で更新する場合は、現在のパスワードを入力して下さい" ,class:"title" %> <br />
+           <%= f.label :"上記内容で更新する場合は、現在のパスワードを入力して下さい" ,class:"title" %> <br><br>
            <%= f.password_field :current_password, autocomplete: "current-password" %>
        </div>
        <div class="field">
-           <%= f.submit "更新する",class: "btn-n btn--orange btn--shadow" %>
-           <%= link_to "戻る", "/", class: "btn btn--blue btn--shadow" %>
+           <%= f.submit "更新する",class: "btn-n btn--orange" %>
+           <%= link_to "戻る", "/", class: "btn btn--blue" %>
       </div>
     <% end %>
        <div class="field">

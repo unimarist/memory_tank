@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :words
   has_many :questions
   has_one_attached :user_icon
-  validates :username, uniqueness: true, presence: true
+  validates :username, uniqueness: true, presence: true,length: { maximum: 15 }
   
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup

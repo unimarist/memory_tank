@@ -6,9 +6,9 @@
 
    <div class="word_top_button">
       <% if @word_level == "未習得Word :" %>
-         <%= link_to "戻る", unlearned_tank_words_path(@tank.id), class:  "btn btn--blue btn--shadow" %>
+         <%= link_to "戻る", unlearned_tank_words_path(@tank.id), class:  "btn btn--blue" %>
       <% elsif @word_level == "習得済Word :"  %>
-         <%= link_to "戻る", learned_tank_words_path(@tank.id), class:  "btn btn--blue btn--shadow" %>
+         <%= link_to "戻る", learned_tank_words_path(@tank.id), class:  "btn btn--blue" %>
       <% end %> 
    </div>
 
@@ -34,12 +34,12 @@
 
       <div class="word_button">
         <div class="button_split">
-         <%= link_to "分かった！", correct_count_tank_word_path(@tank.id,word.id), class: "btn btn--orange btn--shadow" %>
-         <%= link_to "分からなかった！", uncorrect_count_tank_word_path(@tank.id,word.id) ,class:  "btn btn--blue btn--shadow" %>
+         <%= link_to "分かった！", correct_count_tank_word_path(@tank.id,word.id), class: "btn btn--orange" %>
+         <%= link_to "分からなかった！", uncorrect_count_tank_word_path(@tank.id,word.id) ,class:  "btn btn--blue" %>
         </div>
         <div>
-         <%= link_to "編集", edit_tank_word_path(@tank.id,word.id), class: "btn btn--orange btn--shadow" %>
-         <%= link_to "削除", tank_word_path(@tank.id,word.id), method: :delete ,class:  "btn btn--blue btn--shadow" %>
+         <%= link_to "編集", edit_tank_word_path(@tank.id,word.id), class: "btn btn--orange" %>
+         <%= link_to "削除", tank_word_path(@tank.id,word.id), method: :delete ,class:  "btn btn--blue" %>
         </div>
       </div>
     </div>

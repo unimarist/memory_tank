@@ -2,16 +2,16 @@
      <p class="center_font">ログイン</p>
      <%= form_with model: @user, url: user_session_path, local: true do |f| %>
        <div class="field">
-        <%= f.label :ユーザ名 %> <br />
-        <%= f.text_field :username, autofocus: true, maxlength: "6" %>
+        <%= f.label :ユーザ名 %> <br><br>
+        <%= f.text_field :username, autofocus: true %>
        </div>
        <div class="field">
-        <%= f.label :パスワード %><br />
+        <%= f.label :パスワード %><br><br>
         <%= f.password_field :password, autocomplete: "off" %>
        </div>
        <div class="field">
-        <%= f.submit "ログインする" , class: "btn-n btn--orange btn--shadow"%>
-        <%= link_to "戻る", "/", class:  "btn btn--blue btn--shadow" %> 
+        <%= f.submit "ログインする" , class: "btn-n btn--orange"%>
+        <%= link_to "戻る", "/", class:  "btn btn--blue" %> 
        </div>
       <% end %>
   </div>

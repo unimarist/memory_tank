@@ -1,40 +1,50 @@
 <div class="question_container">
-    <div class="word_top">
-     <pre class="center_font">★ QuestionTank ★&nbsp;&nbsp;&nbsp;&nbsp;
-     <%= @tank.tank_name %></pre><br>
+
+   <div class="word_top">
+     <p class="center2">QuestionTank<br><br><%= @tank.tank_name %><br><br>
    </div>
    <div class="tank_top">
-      <%= link_to "Questionを登録する", new_tank_question_path(@tank.id), class: "btn btn--orange btn--shadow" %>
-      <%= link_to "戻る", question_tank_index_tank_path(current_user.id), class:  "btn btn--blue btn--shadow" %> 
-   </div><br>
+      <%= link_to "Questionを登録する", new_tank_question_path(@tank.id), class: "btn btn--orange" %>
+      <%= link_to "戻る", question_tank_index_tank_path(current_user.id), class:  "btn btn--blue" %> 
+   </div><br><br>
+ <div class="center3">
+     <p>Questionを登録するとまずは「未習得Tank」に蓄積されるよ!</p><br>
+     <p>Questionに正解していき、「習得済Tank」に移動していこう！</p>
+ </div>
 
-   <p class="center3">Questionを登録するとまずは「未習得Tank」に蓄積されるよ!</p>
-   <p class="center3">Questionに正解していき、「習得済Tank」に移動していこう！</p>
+ <div class="lp">
 
+  <div class="lp-left">
    <div class="tank_title">
-      <div class="left_tank_title">
-       <p class="center_font">習得済Tank</p> 
-      </div>
-      <div class="right_tank_title">
-        <p class="center_font">未習得Tank</p> 
-      </div>
+      <p class="center_font">習得済Tank</p> 
    </div>
-  
-   <div class="tank">
-      <div >
+
+     <div class="tank">
         <%= link_to image_tag("/images/up.jpg", class: 'left_tank' )  , learned_tank_questions_path(@tank.id)   %>
-      </div>
-      <div>
-        <%= link_to image_tag("/images/down.jpg", class: 'right_tank' )  , unlearned_tank_questions_path(@tank.id)   %>
-      </div>
+     </div>
+
+    <div class="memory_tank_comment">
+       <p class="comment">自分の正答率が<span class="tomato">70%</span>以上のQuestion</p> 
+         <p class="comment_sub">・自分の正答率が高い問題が自動で蓄積されるよ</p><br> 
+         <p class="comment_sub">・習得済の問題も定期的に復習しよう</p><br>
+         <p class="comment_sub">・正答率が70%を下回った問題は、未習得Tankに戻ってしまうよ</p>
+    </div>
+  </div>
+
+
+  <div class="lp-right">
+   <div class="tank_title">
+       <p class="center_font">未習得Tank</p> 
    </div>
- 
-   <div class="tank_comment">
-      <div class="memory_tank_comment">
-       <p class="question_comment">自分の正答率が<span class="tomato">70%</span>以上のQuestionが蓄積</p> 
-      </div>
-      <div class="question_tank_comment">
-       <p class="question_comment">自分の正答率が<span class="tomato">70%</span>未満のQuestionが蓄積</p> 
-      </div>
-   </div>
-</div>
+     <div class="tank">
+           <%= link_to image_tag("/images/down.jpg", class: 'right_tank' )  , unlearned_tank_questions_path(@tank.id)   %>
+     </div>
+
+   <div class="question_tank_comment">
+       <p class="comment">自分の正答率が<span class="tomato">70%</span>未満のQuestion</p> 
+         <p class="comment_sub">・自分の正答率が低い問題が自動で蓄積されるよ</p><br> 
+         <p class="comment_sub">・登録したての問題はまず未習得Tankに保存されるよ</p><br>
+         <p class="comment_sub">・正答率が70%を上回ると習得済Tankに移動されるよ</p>
+    </div> 
+  </div>
+  </div>

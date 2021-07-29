@@ -1,9 +1,13 @@
 <div class="tank_container2">
  
-  <p class="center">WordTank一覧</p><br>
+  <div class="center">WordTank一覧</div><br><br>
+  <div class="center3">
+     <p>Word(単語)を蓄積するための入れ物である「Tank」を作成していこう！</p><br>
+     <p>Tankは蓄積したいWordの種類に合わせて、カテゴリ別に作成するのがオススメ</p>
+ </div><br><br>
   <div class="tank_top">
-     <%= link_to "Tankを作成する", tank_path("単語"), class: "btn btn--orange btn--shadow" %>
-     <%= link_to "戻る", root_path, class:  "btn btn--blue btn--shadow" %>
+     <%= link_to "Tankを作成する", tank_path("単語"), class: "btn btn--orange" %>
+     <%= link_to "戻る", root_path, class:  "btn btn--blue" %>
   </div>
 
   <% @tanks.each do |word_tank|   %>
@@ -23,8 +27,8 @@
      <% end %>  
 
      <div class="tank_button">
-         <%= link_to "編集", edit_tank_path(word_tank.id), class: "btn btn--orange btn--shadow" %>
-         <%= link_to "削除",delete_confirm_tank_path(word_tank.id) ,class:  "btn btn--blue btn--shadow" %>
+         <%= link_to "編集", edit_tank_path(word_tank.id), class: "btn btn--orange" %>
+         <%= link_to "削除",delete_confirm_tank_path(word_tank.id) ,class:  "btn btn--blue" %>
       </div>
    </div>
   <% end %>

@@ -7,19 +7,19 @@
      <%= form_with(model: [@tank,@word],local: true ) do |form| %>
 
       <div class="field">
-        <%= form.label :word ,"Word (必須：30文字以内)" %><br />
+        <%= form.label :word ,"Word (必須：30文字以内)" %><br><br>
         <%= form.text_field :word %>
       </div>
       <div class="field">
-        <%= form.label :meaning ,"意味 (必須：120文字以内)" %><br />
+        <%= form.label :meaning ,"意味 (必須：120文字以内)" %><br><br>
         <%= form.text_field :meaning %>
       </div>
       <div class="field">
-         <%= form.submit "編集する" ,class: "btn-n btn--orange btn--shadow" %>
+         <%= form.submit "編集する" ,class: "btn-n btn--orange" %>
          <% if @word.correct_rate >= 70 %>
-         <%= link_to "戻る", learned_tank_words_path(@word.tank_id), class: "btn btn--blue btn--shadow" %>
+         <%= link_to "戻る", learned_tank_words_path(@word.tank_id), class: "btn btn--blue" %>
          <% else %>
-          <%= link_to "戻る", unlearned_tank_words_path(@word.tank_id), class: "btn btn--blue btn--shadow" %>
+          <%= link_to "戻る", unlearned_tank_words_path(@word.tank_id), class: "btn btn--blue" %>
           <% end %>
       </div>
     <% end %>

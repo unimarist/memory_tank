@@ -1,9 +1,13 @@
 <div class="tank_container2">
  
-   <p class="center2">QuestionTank一覧</p><br>
+   <p class="center2">QuestionTank一覧</p><br><br>
+   <div class="center3">
+     <p>Question(自作の四択問題)を蓄積するための入れ物である「Tank」を作成していこう！</p><br>
+     <p>Tankは蓄積したいQuestionの種類に合わせて、カテゴリ別に作成するのがオススメ</p>
+   </div><br><br>
    <div class="tank_top">
-       <%= link_to "Tankを作成する", tank_path("問題"), class: "btn btn--orange btn--shadow" %>
-       <%= link_to "戻る", root_path, class:  "btn btn--blue btn--shadow" %>
+       <%= link_to "Tankを作成する", tank_path("問題"), class: "btn btn--orange" %>
+       <%= link_to "戻る", root_path, class:  "btn btn--blue" %>
    </div>
 
    <% @tanks.each do |question_tank|   %>
@@ -22,8 +26,8 @@
          </div>
        <% end %>  
        <div class="tank_button">
-           <%= link_to "編集", edit_tank_path(question_tank.id), class: "btn btn--orange btn--shadow" %>
-           <%= link_to "削除",delete_confirm_tank_path(question_tank.id) ,class:  "btn btn--blue btn--shadow" %>
+           <%= link_to "編集", edit_tank_path(question_tank.id), class: "btn btn--orange" %>
+           <%= link_to "削除",delete_confirm_tank_path(question_tank.id) ,class:  "btn btn--blue" %>
        </div>
      </div>
    <% end %>
