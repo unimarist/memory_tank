@@ -75,8 +75,8 @@
 
 .icon_image {
   border: 1px solid white;
-  width: 55px;
-  height: 55px;
+  width: 45px;
+  height: 45px;
   border-radius: 90%;
   background-position: center center;
   background-size: contain;
@@ -127,8 +127,8 @@
 .default_icon_image {
   background-image: url("/images/default_user.png");
   border: 1px solid white;
-  width: 55px;
-  height: 55px;
+  width: 45px;
+  height: 45px;
   border-radius: 90%;
   background-position: center center;
   background-size: contain;
