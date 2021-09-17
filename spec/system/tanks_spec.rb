@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'WordTank作成', type: :system do
+RSpec.describe 'WordTank作成', type: :system, js: true do
   before do
     @user = FactoryBot.create(:user)
     @tank_name = Faker::Lorem.characters(number: 10)
@@ -72,7 +72,7 @@ RSpec.describe 'WordTank作成', type: :system do
 end
 
 
-RSpec.describe 'QuestionTank作成', type: :system do
+RSpec.describe 'QuestionTank作成', type: :system, js: true do
   before do
     @user = FactoryBot.create(:user)
     @tank_name = Faker::Lorem.characters(number: 10)
@@ -144,7 +144,7 @@ RSpec.describe 'QuestionTank作成', type: :system do
 end
 
 
-RSpec.describe 'WordTank編集', type: :system do
+RSpec.describe 'WordTank編集', type: :system, js: true do
     before do
       @tank = FactoryBot.create(:tank)  
       @tank.tank_type = "単語"
@@ -194,7 +194,7 @@ RSpec.describe 'WordTank編集', type: :system do
 end
 
 
-RSpec.describe 'QuestionTank編集', type: :system do
+RSpec.describe 'QuestionTank編集', type: :system, js: true do
   before do
     @tank = FactoryBot.create(:tank)  
     @tank.tank_type = "問題"
@@ -244,7 +244,7 @@ RSpec.describe 'QuestionTank編集', type: :system do
 end
 
 
-RSpec.describe 'WordTank削除', type: :system do
+RSpec.describe 'WordTank削除', type: :system, js: true do
   before do
     @tank = FactoryBot.create(:tank)  
     @tank.tank_type = "単語"
@@ -285,7 +285,7 @@ RSpec.describe 'WordTank削除', type: :system do
 end
 
 
-RSpec.describe 'QuestionTank削除', type: :system do
+RSpec.describe 'QuestionTank削除', type: :system, js: true do
   before do
     @tank = FactoryBot.create(:tank)  
     @tank.tank_type = "問題"
