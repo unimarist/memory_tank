@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Question作成', type: :system do
+RSpec.describe 'Question作成', type: :system, js: true do
   before do
     @tank = FactoryBot.create(:tank)  
     @tank.tank_type = "問題"
@@ -73,7 +73,7 @@ RSpec.describe 'Question作成', type: :system do
 end
 
 
-RSpec.describe 'Question編集', type: :system do
+RSpec.describe 'Question編集', type: :system, js: true do
   before do
     @question = FactoryBot.create(:question)
     @question.correct_rate = @question.correct_count * 100 / (@question.correct_count + @question.uncorrect_count)
@@ -224,7 +224,7 @@ RSpec.describe 'Question編集', type: :system do
 end
 
 
-RSpec.describe 'Question削除', type: :system do
+RSpec.describe 'Question削除', type: :system, js: true do
   before do
     @question = FactoryBot.create(:question)
     @question.correct_rate = @question.correct_count * 100 / (@question.correct_count + @question.uncorrect_count)

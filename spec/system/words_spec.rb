@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Word作成', type: :system do
+RSpec.describe 'Word作成', type: :system, js: true do
   before do
       @tank = FactoryBot.create(:tank)  
       @tank.tank_type = "単語"
@@ -51,7 +51,7 @@ RSpec.describe 'Word作成', type: :system do
 end
 
 
-RSpec.describe 'Word編集', type: :system do
+RSpec.describe 'Word編集', type: :system, js: true do
   before do
     @word = FactoryBot.create(:word)
     @word.correct_rate = @word.correct_count * 100 / (@word.correct_count + @word.uncorrect_count)
@@ -67,8 +67,6 @@ RSpec.describe 'Word編集', type: :system do
       # Wordを作成したユーザーでログインする
       sign_in(@word.user)
       # WordTank一覧ページへ遷移するアイコンをクリックする
-      find("img[src$='tank_img.jpg']").click
-      # WordTankページへ遷移するアイコンをクリックする
       find("img[src$='tank_img.jpg']").click
      if @word.correct_rate < 70
        # 未習得Tankページへ遷移するアイコンをクリックする
@@ -138,7 +136,7 @@ RSpec.describe 'Word編集', type: :system do
 end
 
 
-RSpec.describe 'Word削除', type: :system do
+RSpec.describe 'Word削除', type: :system, js: true do
   before do
     @word = FactoryBot.create(:word)
     @word.correct_rate = @word.correct_count * 100 / (@word.correct_count + @word.uncorrect_count)

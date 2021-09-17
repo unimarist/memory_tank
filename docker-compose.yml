@@ -1,0 +1,30 @@
+version: "2"
+services:
+  db: #データベース用コンテナの定義
+    image: mysql:5.6 #ベースとなるバージョン5,6のmysqlイメージを公式リポジトリより取得
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci #文字コードの設定
+    environment:
+      MYSQL_ROOT_PASSWORD: passw0rd #データベースユーザ「root」のパスワード
+      MYSQL_DATABASE: memory_tank_development #データベース名
+    volumes:
+      - mysql-data:/var/lib/mysql #名前付きボリュームでデータを永続化 ※ Dockerの管理下にデータを保管
+    ports:
+      - "4306:3306" #ポート設定
+
+  app: #アプリ用コンテナの定義
+    tty: true #コンテナ上でbinding.pryするために必要
+    stdin_open: true #コンテナ上でbinding.pryするために必要
+    build: . #DockerFileを素にコンテナイメージを作成
+    command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'" #railsの起動
+
+    volumes:
+      - .:/memory_tank #ローカルのディレクトリをコンテナにマウント
+      - bundle:/usr/local/bundle #bundle installした後buildし直さなくてよくなる
+    ports:
+      - "3000:3000" #ポート設定
+    depends_on: #作成順序の設定 「db」→「app」
+      - db
+
+volumes:
+  mysql-data: #名前付きボリューム
+  bundle: #bundle installした後buildし直さなくてよくなる

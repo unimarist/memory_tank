@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'アカウント登録', type: :system do
+RSpec.describe 'アカウント登録', type: :system, js: true do
   before do
     @user = FactoryBot.build(:user)
   end
@@ -52,7 +52,7 @@ RSpec.describe 'アカウント登録', type: :system do
 end
 
 
-RSpec.describe 'ログイン', type: :system do
+RSpec.describe 'ログイン', type: :system, js: true do
   before do
     @user = FactoryBot.create(:user)
   end
