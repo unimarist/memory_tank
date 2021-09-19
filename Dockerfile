@@ -48,7 +48,3 @@ RUN bundle install
 
 #ローカルのアプリファイルをまるっとアプリ用コンテナにコピー
 COPY . /memory_tank
-
-#不足ファイルの確認およびインストール/webpackerのコンパイル
-RUN yarn install --check-files
-RUN bundle exec rails webpacker:compile
