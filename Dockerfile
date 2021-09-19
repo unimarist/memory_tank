@@ -52,3 +52,4 @@ COPY . /memory_tank
 #不足ファイルの確認およびインストール/webpackerのコンパイル
 RUN yarn install --check-files
 RUN bundle exec rails webpacker:compile
+RUN bundle exec rails db:migrate RAILS_ENV=development
