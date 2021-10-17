@@ -1,6 +1,6 @@
 # MemoryTank
 効率的なナレッジ蓄積と知識定着を支援するアプリケーション
-<img width="1670" alt="スクリーンショット 2021-06-12 20 05 36" src="https://user-images.githubusercontent.com/75885767/121773812-765b1100-cbb9-11eb-9e5a-828b8d9b3e01.png">
+<img width="1680" alt="スクリーンショット 2021-10-17 23 03 31" src="https://user-images.githubusercontent.com/75885767/137630585-a32e2d84-1bdb-4841-a67c-765b347a9f1a.png">
 
 # 本アプリ作成への想い
 
