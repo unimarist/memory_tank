@@ -45,6 +45,8 @@ COPY Gemfile.lock /memory_tank/Gemfile.lock
 #アプリ用コンテナにgemをインストール
 RUN gem install bundler
 RUN bundle install
+#結合テスト(Rspec)用にcapybara,selenium-webdriverを最新化
+RUN bundle update capybara selenium-webdriver
 
 #ローカルのアプリファイルをまるっとアプリ用コンテナにコピー
 COPY . /memory_tank

@@ -24,8 +24,6 @@ RSpec.describe 'Question作成', type: :system, js: true do
     expect(current_path).to eq question_tank_index_tank_path(@tank.user_id)
     # QuestionTankページへ遷移するアイコンをクリックする
     find("img[src$='tank_img_2.jpg']").click
-    # Question登録ページへのリンクがあることを確認する
-    expect(page).to have_content('Questionを登録する')
     # Question登録ページに移動する
     visit new_tank_question_path(@tank.id)
     # Questionを入力する

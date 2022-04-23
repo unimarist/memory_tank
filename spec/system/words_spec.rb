@@ -18,8 +18,6 @@ RSpec.describe 'Word作成', type: :system, js: true do
     expect(current_path).to eq word_tank_index_tank_path(@tank.user_id)
     # WordTankページへ遷移するアイコンをクリックする
     find("img[src$='tank_img.jpg']").click
-    # Word登録ページへのリンクがあることを確認する
-    expect(page).to have_content('Wordを登録する')
     # Word登録ページに移動する
     visit new_tank_word_path(@tank.id)
     # Wordを入力する
