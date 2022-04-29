@@ -7,11 +7,11 @@
      <%= form_with(model: [@tank,@word],local: true ) do |form| %>
 
       <div class="field">
-        <%= form.label :word ,"Word (必須：30文字以内)" %><br><br>
+        <%= form.label :word ,"Word (必須：100文字以内)" %><br><br>
         <%= form.text_field :word %>
       </div>
       <div class="field">
-        <%= form.label :meaning ,"意味 (必須：120文字以内)" %><br><br>
+        <%= form.label :meaning ,"意味 (必須：500文字以内)" %><br><br>
         <%= form.text_field :meaning %>
       </div>
       <div class="field">

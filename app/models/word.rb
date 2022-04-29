@@ -1,8 +1,8 @@
 class Word < ApplicationRecord
   belongs_to :tank 
   belongs_to :user
-  validates :word, presence: true, uniqueness: true,length: { maximum: 30 }
-  validates :meaning, presence: true, length: { maximum: 120 }
+  validates :word, presence: true, uniqueness: true,length: { maximum: 100 }
+  validates :meaning, presence: true, length: { maximum: 500 }
 
   def self.learned(tank_id)
     Word.where("tank_id = ?",tank_id).where("correct_rate >= ?",70)

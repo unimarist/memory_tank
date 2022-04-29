@@ -16,7 +16,7 @@ class WordsController < ApplicationController
     if @word.save
       redirect_to tank_words_path(@word.tank_id)
     else
-      flash.now[:error_word] = "「Word」は必須かつ未登録である必要があります。30字以内で入力して下さい。/「意味」は必須です。120文字以内で入力して下さい。"
+      flash.now[:error_word] = "「Word」は必須かつ未登録である必要があります。100字以内で入力して下さい。/「意味」は必須です。500文字以内で入力して下さい。"
       render :new
     end
   end
@@ -30,7 +30,7 @@ class WordsController < ApplicationController
     elsif @word.update(word_params) && @word.correct_rate < 70
       redirect_to unlearned_tank_words_path(@word.tank_id)
     else
-      flash[:error_word] = "「Word」は必須かつ未登録である必要があります。30字以内で入力して下さい。/「意味」は必須です。120文字以内で入力して下さい。"
+      flash[:error_word] = "「Word」は必須かつ未登録である必要があります。100字以内で入力して下さい。/「意味」は必須です。500文字以内で入力して下さい。"
       render :edit
     end
   end
