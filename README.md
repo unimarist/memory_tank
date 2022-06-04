@@ -25,7 +25,7 @@
 - 蓄積したWordや四択問題はユーザ自身の定着率/正答率に応じて、習得済と未習得の2つのカテゴリに分割して自動管理される<br>
 
 # App URL
-- https://www.memory-tank.ga/
+- https://www.memory-tank.tk/
 
 # 使用技術
 - フロントエンド<br>
