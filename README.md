@@ -25,7 +25,7 @@
 - 蓄積したWordや四択問題はユーザ自身の定着率/正答率に応じて、習得済と未習得の2つのカテゴリに分割して自動管理される<br>
 
 # App URL
-- https://www.memory-tank.tk/
+- https://www.memory-tank.ga/
 
 # 使用技術
 - フロントエンド<br>
@@ -37,13 +37,14 @@
   ○ nginx 1.12<br>
   ○ unicorn 6.0.0<br>
   ○ mysql 5.7<br>
-  ○ AWS(CloudFormation/EC2/VPC/ALB/ACM/Route53/RDS)<br>
+  ○ AWS(EC2/VPC/ALB/ACM/Route53)<br>
 - その他使用ツール<br>
+  ○ terraform<br>
+  ○ ansible<br>
   ○ Visual Studio Code<br>
   ○ draw.io
 
 # AWS構成図
-以下構成をAWSのCloudFormationでコード化し、構築をしました。
 <img width="781" alt="スクリーンショット 2021-06-12 20 27 09" src="https://user-images.githubusercontent.com/75885767/121774441-680ef400-cbbd-11eb-883f-81324a475260.png">
 
 # 機能一覧
