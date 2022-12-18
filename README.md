@@ -45,7 +45,8 @@
   ○ draw.io
 
 # AWS構成図
-<img width="781" alt="スクリーンショット 2021-06-12 20 27 09" src="https://user-images.githubusercontent.com/75885767/121774441-680ef400-cbbd-11eb-883f-81324a475260.png">
+<img width="1064" alt="構成図" src="https://user-images.githubusercontent.com/75885767/208287642-c5bf2192-4870-4339-acdf-c47207961068.png">
+
 
 # 機能一覧
 | 機能  | 概要   | 
